@@ -146,13 +146,21 @@ header{
 }
 @media(max-width: 320px){
 	.sm-nav{
-		height: 90px;
+		height: 95px;
 	}
 	.sm-nav-container{
 	    flex-wrap: wrap;
-	    
+	    text-align: right;	    
 	}
-	
+	.accessories-div{
+	    text-align: right;
+	    width: 100%;
+	    margin-top: 5px;
+	}
+	.search-link .input-box input {
+	    left: -65px;
+    	width: 243px;
+	}
 }
 /*Sidebar*/
 .sidebar-bg{

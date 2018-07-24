@@ -7,3 +7,32 @@
 	display: inline-block;
 	border-bottom: 2px solid #000;
 }
+/*Footer Social Links*/
+.footer-wrapper>a{
+	cursor: pointer;
+	text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+	transition: all 1s linear;
+}
+/*All Icons*/
+/*FAcebook*/
+.footer-wrapper>a:first-child{
+	color: #4867AA;
+}
+/*Twitter*/
+.footer-wrapper>a:nth-child(2){
+	color: #1da1f2;
+}
+/*Linkedin*/
+.footer-wrapper>a:nth-child(3){
+	color: #283e4a;
+}
+/*Google Plus*/
+.footer-wrapper>a:last-child{
+	color: #de564a;
+}
+/*All Icon Hover Effects*/
+.footer-wrapper>a:hover{
+	text-shadow: 0px 14px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    top: -5px;
+}
