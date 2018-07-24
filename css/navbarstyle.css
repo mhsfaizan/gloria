@@ -1,0 +1,157 @@
+header{
+	height: 70px;
+	padding: 10px;
+	display: flex;
+	width: 90%;
+	margin: 0 auto;
+	justify-content: space-between;
+	align-items: center;
+}
+.right-header>a{
+	margin: 0px 5px;
+	padding: 0px 5px;
+}
+.right-header>a:nth-child(3),
+.right-header>a:nth-child(3){
+	margin-top: 10px;
+}
+.lg-nav{
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.lg-nav>a{
+	display: inline-block;
+	color: #fff;
+}
+.search-div{
+	display: none;
+	position: fixed;
+	background-color: #fff;
+	z-index: 1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	padding-top: 10px;
+}
+/*Mobile Nav*/
+.sm-nav{
+	display: none;
+}
+@media(max-width: 1000px){
+	header{
+		display: none;
+	}
+	.lg-nav{
+		display: none;
+	}
+	.sm-nav{
+		display: block;
+		height: 60px;
+	}
+	.sm-nav-container{
+		display: flex;
+		justify-content: space-between;
+		width: 95%;
+		margin: 0 auto;
+		padding-top: 12px;
+	}
+	.logo-and-col-btn{
+		display: flex;
+		align-items: center;	
+		height: 100%;	
+	}
+	.collapse-btn{
+		display: inline-block;
+		width: 40px;
+		margin-top: 4px;
+		cursor: pointer;
+	}
+	.bar{
+		height: 2px;
+	    width: 25px;
+	    border-radius: 2px;
+	    margin: 5px 0px;
+	    background-color: #fff;
+	}
+	.collapse-logo{
+		color: #fff;
+		display: inline-block;
+	}
+	.collapse-logo>h4{
+		margin-bottom: 0;
+	}
+	.accessories-div>a{
+		margin: 0px 10px;
+		color: #fff;
+	}
+}
+/*Sidebar*/
+.sidebar-bg{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.4);
+	z-index: 1;
+	display: none;
+}
+.sidebar{
+	position: fixed;
+	width: 250px;
+	background-color: #fff;
+	z-index: 2;
+	top: 0;
+	left: -260px;
+	bottom: 0;
+	box-shadow: 0px 3px 15px #2f2d2d;
+	transition: all 0.3s linear;
+}
+.sidebar-head{
+	height: 60px;
+	position: relative;
+}
+.sidebar-head .sidebar-links>a{
+	color: #fff;
+	margin-top: 0;
+	padding-top: 16px;
+	display: inline-block;
+}
+.close-btn-div{
+	width: 25px;
+    height: 20px;
+    position: absolute;
+    right: 10px; 
+	top: 20px;
+    cursor: pointer;
+    padding: 3px 0px;
+}
+.close-btn{
+	position: relative;
+}
+.close-btn:after,
+.close-btn:before{
+	position: absolute;
+	content: '';
+	height: 2px;
+    width: 25px;
+    border-radius: 2px;
+    margin: 5px 0px;
+    background-color: #fff;
+}
+.close-btn:after{
+	transform: rotate(-45deg);
+}
+.close-btn:before{
+	transform: rotate(45deg);
+}
+.sidebar-links>a{
+	color: #000;
+	font-weight: 500;
+	display: block;
+	margin: 5px 20px;
+}

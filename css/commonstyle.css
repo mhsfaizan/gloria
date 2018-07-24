@@ -1,0 +1,147 @@
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lemon" />
+/*Utilities*/
+*{
+	font-family: Lemon;
+	margin: 0;
+	padding: 0;
+	border:1px solid red;
+}
+p{
+	margin-bottom: 0;
+}
+.clear{
+	clear: both;
+}
+.space{
+	height: 20px;
+	width: 100%;
+}
+.section-padding{
+	padding: 40px 10px 20px 10px;
+}
+
+/*Backgrounds Colors*/
+.dark-blue-bg{
+	background-color: #0c5aad;
+}
+.light-blue-bg{
+	background-color: #e1f5fc;
+}
+.light-grey-bg{
+	background-color: #ebeff0;
+}
+.light-pink-bg{
+	background-color: #f3e6f5;
+}
+.light-green-bg{
+	background-color: #e3fced;
+}
+.light-yellow-bg{
+	background-color: #faf9e1;
+}
+.dark-yellow-bg{
+	background-color: #ede1b2;
+}
+
+/*Fonts*/
+.dark-blue-font{
+	color: #0c5aad;
+}
+.dark-pink-font{
+	color: #fa845c;
+}
+
+/*Image Hover Effects*/
+.wrapper-container{
+	position: relative;
+}
+.wrapper-layer{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: red;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: all 0.3s linear;
+	background-color: rgba(0,0,0,0.5);
+}
+.wrapper-layer>p{
+	/*display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;*/
+	position: absolute;
+	top: 50%;
+	left: 46%;
+	transition: all 0.3s linear;
+	color: #fff;
+}
+.wrapper-layer:hover{
+	opacity: 1;
+}
+.wrapper-layer:hover.wrapper-layer>p{
+	top: 40%;
+}
+
+/*Scale Effect*/
+.scale-container{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.img-scale{
+	transition: transform 0.3s linear;
+}
+.img-scale:hover{
+	transform: scale(1.3);
+}
+
+.cart-link{
+	position: relative;
+}
+.cart-number{
+	background-color: #f00;
+    display: inline-block;
+    position: absolute;
+    top: -4px;
+    border-radius: 50%;
+    color: #fff;
+    left: 15px;
+    padding: 0px 6px;
+    font-size: 10px;
+}
+
+/*Tooltip*/
+/*button.input-group-text{
+	cursor: pointer;
+	outline: none;
+}
+.tooltip-container{
+	position: relative;
+}
+.tip-box{
+	position: absolute;
+    top: 28px;
+    right: -60px;
+	background-color: #000;
+	color: #fff;
+	display: inline-block;
+	padding: 5px 10px;
+	margin-top: 20px;
+}
+.tip{
+	position: relative;
+}
+.tip-arrow{
+	position: absolute;
+	left: 40%;
+	top:-26px;
+	height: 0;
+	width: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid #000;
+}*/

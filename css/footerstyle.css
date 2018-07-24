@@ -1,0 +1,9 @@
+.footer-links>a{
+	display: block;
+	color: #000;
+	padding: 3px 0px;
+}
+.footer-heading>h4{
+	display: inline-block;
+	border-bottom: 2px solid #000;
+}
