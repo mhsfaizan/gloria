@@ -15,7 +15,6 @@ $(document).ready(function() {
 	});
 
 	$('.search-link .fa').click(function() {
-		
 		if ($('.search-link .input-box input').hasClass('hide-input')) {
 			$('.search-link .input-box input').addClass('show-input').removeClass('hide-input');
 			$('.search-link .fa').addClass('fa-times').removeClass('fa-search');

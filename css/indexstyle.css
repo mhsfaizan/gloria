@@ -209,6 +209,49 @@
 	margin-top: -10px;
 }
 
+@media(max-width: 285px){
+	.hex-box-body {
+	    margin: 0 auto;
+	    height: 120px;
+	    width: 160px;
+	    padding: 0 40px;
+	    position: relative;
+	}
+	.hex-box-head, .hex-box-foot {
+	    border-left: 80px solid transparent;
+	    border-right: 80px solid transparent;
+	}
+
+	/*Box1*/
+	.hex-box-head{
+		border-bottom: 60px solid #f3e6f5;
+	}
+	.hex-box-foot{
+		border-top: 60px solid #f3e6f5;
+	}
+	/*Box2*/
+	#box-2 .hex-box-head{
+		border-bottom: 60px solid #e1f5fc;
+	}
+	#box-2 .hex-box-foot{
+		border-top: 60px solid #e1f5fc;
+	}
+	/*Box3*/
+	#box-3 .hex-box-head{
+		border-bottom: 60px solid #e3fced;
+	}
+	#box-3 .hex-box-foot{
+		border-top: 60px solid #e3fced;
+	}
+	/*Box4*/
+	#box-4 .hex-box-head{
+		border-bottom: 60px solid #faf9e1;
+	}
+	#box-4 .hex-box-foot{
+		border-top: 60px solid #faf9e1;
+	}
+}
+
 /*Decore Section*/
 .decor-div{
 	display: flex;
@@ -249,7 +292,11 @@
 	height: 100%;
 	max-width: 100%;
 }
-
+@media(max-width: 320px){
+	.decore-text>h1 {
+	    font-size: 33px;
+	}
+}
 /*Lighting Sec*/
 .lighting-bar{
 	min-height: 150px;
@@ -261,6 +308,26 @@
 	background-color: #fff;
 	padding: 10px;
 	display: inline-block;
+}
+@media(max-width: 285px){
+	.lighting-text{
+		font-size: 36px;
+	}
+}
+@media(max-width: 320px){
+	.lighting-sale-time>h1{
+		font-size: 11px;
+	}
+}
+@media(min-width: 320px) and (max-width: 400px){
+	.lighting-sale-time>h1{
+		font-size: 17px;
+	}
+}
+@media(min-width: 400px) and (max-width: 540px){
+	.lighting-sale-time>h1{
+		font-size: 25px;
+	}
 }
 .time{
 	background-color: #000;
