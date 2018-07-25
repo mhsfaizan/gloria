@@ -19,7 +19,14 @@ p{
 .section-padding{
 	padding: 40px 10px 20px 10px;
 }
-
+@media(max-width: 768px){
+	.row>div{
+		margin-top: 20px;
+	}
+}
+.btn-light{
+    background-color: #d8dbde;
+}
 /*Backgrounds Colors*/
 .dark-blue-bg{
 	background-color: #0c5aad;
