@@ -6,6 +6,10 @@
 	padding: 0;
 	border:1px solid red;
 }
+ul,ol,dl{
+	margin: 0;
+	padding: 0;
+}
 p{
 	margin-bottom: 0;
 }
@@ -35,7 +39,7 @@ p{
 	background-color: #e1f5fc;
 }
 .light-grey-bg{
-	background-color: #ebeff0;
+	background-color: #f1f1f1;
 }
 .light-pink-bg{
 	background-color: #f3e6f5;

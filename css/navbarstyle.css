@@ -22,7 +22,11 @@ header{
 	align-items: center;
 	list-style: none;
 	padding-left: 0;
+<<<<<<< HEAD
 	margin:0;
+=======
+	margin-bottom: 0;
+>>>>>>> e62b65311d14b394a97f68a9f4d9a0f1c69db9d2
 }
 ul.lg-nav li>a{
 	color: #fff;
@@ -246,7 +250,6 @@ ul.lg-nav li>a{
 /*drop down style*/
 li.mydropdown{
 	position: relative;
-	z-index: 99;
 }
 ul.my-dropdown-menu{
 	visibility: hidden;
@@ -257,6 +260,7 @@ ul.my-dropdown-menu{
 	left: 0;
 	padding-left: 0;
 	top: 150%;
+	z-index: 1;
 }
 ul.my-dropdown-menu li a{
 	display: block;
