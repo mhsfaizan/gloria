@@ -43,7 +43,7 @@
 
 /*Filters Part*/
 .filter-div ul{
-	padding: 4px 15px;
+	padding: 15px;
 }
 .filter-div ul li{
 	color: #fff;
@@ -132,31 +132,31 @@
 .bigger-img{
 	position: relative;
 }
-.real-price{
-	font-size: 30px;
-}
+
 .thumbnails{
 	height: 100px;
 }
 .thumbnails img{
 	height: 100px;
 	width: auto;
+	box-shadow: 0px 2px 12px #ababab;
+	border: 1px solid #eee;
 }
 .owl-next,
 .owl-prev{
 	background-color: #000!important;
 	width: 20px;
 	top: 0;
-	bottom: 0;
+	bottom: 25px;
 	position: absolute;
 	color: #fff!important;
 	font-size: 30px!important;
 }
 .owl-next{
-	right: 10px;
+	right: 0px;
 }
 .owl-prev{
-	left: 10px;
+	left: 0px;
 }
 .owl-next.disabled,
 .owl-prev.disabled{
@@ -172,4 +172,13 @@
     font-weight: 600;
     padding-top: 14px;
     text-transform: uppercase;
+}
+
+/*Products Details part*/
+.real-price{
+	font-size: 30px;
+}
+.prod-details .size-list,
+.prod-details .color-list{
+	padding: 15px;
 }
