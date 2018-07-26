@@ -22,11 +22,7 @@ header{
 	align-items: center;
 	list-style: none;
 	padding-left: 0;
-<<<<<<< HEAD
 	margin:0;
-=======
-	margin-bottom: 0;
->>>>>>> e62b65311d14b394a97f68a9f4d9a0f1c69db9d2
 }
 ul.lg-nav li>a{
 	color: #fff;
@@ -135,6 +131,11 @@ ul.lg-nav li>a{
 	    padding: 0px;
 	    opacity: 0;	
 	}*/
+}
+@media(min-width: 320px) and(max-width: 550px){
+	.sm-nav-container{
+		justify-content: space-around;
+	}
 }
 @media(min-width: 320px) and (max-width: 550px){
 	.search-link .input-box input {
