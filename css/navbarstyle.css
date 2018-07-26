@@ -132,7 +132,7 @@ ul.lg-nav li>a{
 	    opacity: 0;	
 	}*/
 }
-@media(min-width: 320px) and(max-width: 550px){
+@media(min-width: 320px) and (max-width: 550px){
 	.sm-nav-container{
 		justify-content: space-around;
 	}
