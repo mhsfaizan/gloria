@@ -1,0 +1,13 @@
+.prod-img{
+	height: 100px;
+}
+#quantity{
+	width: 61px;
+    text-align: center;
+    padding: 5px 10px;
+    border: 1px solid grey;
+}
+.cart-div table tbody tr td{
+	padding: 0px;
+	vertical-align: middle;
+}
