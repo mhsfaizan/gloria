@@ -261,11 +261,12 @@ ul.my-dropdown-menu{
 	left: 0;
 	padding-left: 0;
 	top: 150%;
+	width:190px;
 	z-index: 1;
 }
 ul.my-dropdown-menu li a{
 	display: block;
-    padding: .1rem 4rem .6rem 2rem;
+    padding: .1rem 2rem .6rem 2rem;
 }
 
 @media(min-width:768px){
