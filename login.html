@@ -9,7 +9,7 @@
 	    <div class="card-body">
 			<div class="container">
 				<h5 class="pull-left"><b>LOGIN</b></h5>
-				<p class="pull-right"><b>Home > Login</b></p>
+				<p class="pull-right"><b><a href="index.html">Home</a> > Login</b></p>
 			</div>
 	    </div>
 	</div>
@@ -23,10 +23,10 @@
 					<form name="loginFrom" ng-submit="onSubmit($event.target)">
 						<p class="text-danger text-center" ng-if="loginError!=undefined">{{loginError}}</p>
 						<div class="form-group">
-							<input type="text" name="" placeholder="Username" class="form-control" ng-model="username" >
+							<input type="text" name="" placeholder="Username" class="form-control" ng-model="username" required>
 						</div>
 						<div class="form-group">
-							<input type="password" name="" placeholder="Password" class="form-control" ng-model="password" >
+							<input type="password" name="" placeholder="Password" class="form-control" ng-model="password" required>
 						</div>
 						<div class="space"></div>
 						<button class="btn btn-primary w-100" ng-disabled="!loginFrom.$valid" ng-class="{'disable':!loginFrom.$valid}">Login</button>

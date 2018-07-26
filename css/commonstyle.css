@@ -16,6 +16,9 @@ p{
 .clear{
 	clear: both;
 }
+.error{
+	color:#f00;
+}
 .space{
 	height: 20px;
 	width: 100%;

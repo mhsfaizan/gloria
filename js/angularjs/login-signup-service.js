@@ -43,4 +43,16 @@ app.service("loginSignup",function($http){
 		})
 		.then((resp)=>cb(resp.data),(error)=>console.log(error));
 	}
+	this.signup = (data,cb)=>{
+		var myData = this.convertToForm(data);
+		$http({
+			method:"POST",
+			url:"php/signup.php",
+			data:myData,
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>cb(resp.data),(error)=>console.log(error));
+	}
 });

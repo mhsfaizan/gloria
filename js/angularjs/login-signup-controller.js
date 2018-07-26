@@ -23,15 +23,35 @@ app.controller("loginController",($scope,loginSignup,saveLocal,$rootScope)=>{
 				window.location.href = "dashboard.html";
 			}
 			else if(resp.status==3){
+				form.reset();
 				$scope.loginError = "Invalid Username Or Password";
 			}
 		});
 	}
 });
 
+
 app.controller("dashboardController",($scope,$rootScope,saveLocal)=>{
 	$rootScope.setUser();
 	if(!saveLocal.isLoggedIn()){
 		window.location.href = "index.html";
 	}
-})
+});
+
+app.controller("signupController",($scope,loginSignup)=>{
+	var signupData = {};
+	$scope.onSubmit = (form)=>{
+		signupData.name = $scope.name;
+		signupData.email = $scope.email;
+		signupData.contactno = $scope.contactno;
+		signupData.password = $scope.password;
+		loginSignup.signup(signupData,(data)=>{
+			if(data.status==1){
+				console.log(data.message);
+			}
+			else if(data.status==2){
+				$scope.signupError = data.message;
+			}
+		});
+	}
+});

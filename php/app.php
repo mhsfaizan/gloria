@@ -5,29 +5,8 @@
 		public static function setConnect(){
 			self::$conn = self::connect();
 		} 
-		public static function signUp($post){
-			$name = self::$conn->real_escape_string($post['name']);
-			$email = self::$conn->real_escape_string($post['email']);
-			$mobileno = self::$conn->real_escape_string($post['mobileno']);
-			$country = self::$conn->real_escape_string($post['country']);
-			$city = self::$conn->real_escape_string($post['city']);
-			$profession = self::$conn->real_escape_string($post['profession']);
-			$password = self::$conn->real_escape_string($post['password']);
-			$is_interest = self::$conn->real_escape_string($post['isInterest']);
-			$email_me = self::$conn->real_escape_string($post['emailMe']);
-			$sql = "INSERT INTO users(name,email,mobileno,country,city,profession,password,is_interest,email_me) VALUES('$name','$email','$mobileno','$country','$city','$profession','$password','$is_interest','$email_me')";
-			if(self::$conn->query($sql)){
-				$resp['status'] = "ok";
-				$resp['message'] = "succesfully Inserted";
-				echo json_encode($resp);
-			}
-			else{
-				$resp['status'] = "ok";
-				$resp['message'] = self::$conn->error;
-				echo json_encode($resp);
-			}
-		}
-		public static function  runQuery($sql){
+		
+		public static function  runFetchQuery($sql){
 			$arr = array();
 			if($res = self::$conn->query($sql)){
 				if($res->num_rows>0){
@@ -47,6 +26,49 @@
 			}
 			return $resp;
 		}
+		public static function executeQuery($sql){
+			if(self::$conn->query($sql)){
+				$resp['message'] = "Succesfully executed";
+				$resp['status'] = 1;
+			}
+			else{
+				$resp['message'] = "Query Error";
+				$resp['status'] = 2;
+			}
+			return $resp;
+		}
+		public static function signUp($post){
+			if($post['name']==""){
+				$resp['message'] = "Enter Name Please";
+				$resp['status'] = 2;
+				echo json_encode($resp);
+			}
+			else if($post['email']==""){
+				$resp['message'] = "Enter Email";
+				$resp['status'] = 2;
+				echo json_encode($resp);
+			}
+			else if($post['contactno']==""){
+				$resp['message'] = "Enter contactno";
+				$resp['status'] = 2;
+				echo json_encode($resp);
+
+			}
+			else if($post['password']==""){
+				$resp['password'] = "Enter Password";
+				$resp['status'] = 2;
+				echo json_encode($resp);
+
+			}
+			else{
+				$name = self::$conn->real_escape_string($post['name']);
+				$email = self::$conn->real_escape_string($post['email']);
+				$contactno = self::$conn->real_escape_string($post['contactno']);
+				$password = self::$conn->real_escape_string($post['password']);
+				$sql = "INSERT INTO user(name,email,contactno,password) VALUES('$name','$email','$contactno','$password')";
+				echo json_encode(self::executeQuery($sql));
+			}
+		}
 		public static function login($post){
 			if($post['username']=="undefined"){
 				$resp['message'] = "Please Enter the Username";
@@ -62,7 +84,7 @@
 				$username = $post['username'];
 				$password = $post['password'];
 				$sql = "SELECT user_id,name,email FROM user WHERE email='$username' AND password='$password'";
-				echo json_encode(self::runQuery($sql));
+				echo json_encode(self::runFetchQuery($sql));
 			}
 		}
 	}
