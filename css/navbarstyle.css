@@ -16,12 +16,13 @@ header{
 	margin-top: 10px;
 }
 .lg-nav{
-	height: 100px;
+	min-height: 60px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	list-style: none;
 	padding-left: 0;
+	margin:0;
 }
 ul.lg-nav li>a{
 	color: #fff;
@@ -249,7 +250,7 @@ li.mydropdown{
 }
 ul.my-dropdown-menu{
 	visibility: hidden;
-	padding-top: 2.3rem;
+	padding-top: 1rem;
 	list-style: none; 
 	transition: all .2s linear;
 	position: absolute;
@@ -259,7 +260,7 @@ ul.my-dropdown-menu{
 }
 ul.my-dropdown-menu li a{
 	display: block;
-    padding: .1rem 5rem .6rem 2rem;
+    padding: .1rem 4rem .6rem 2rem;
 }
 
 @media(min-width:768px){

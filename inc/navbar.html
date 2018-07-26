@@ -3,7 +3,12 @@
 		<p class="dark-blue-font">lorem ipsum lorem ipsum  lorem ipsum lorem ipsum lorem ipsum</p>
 	</div>
 	<div class="right-header">
-		<a href="login.html">Login/Register</a>
+		<a href="login.html" ng-if="user==undefined">Login/Register</a>
+		<a ng-if="user!=undefined" href="#" class="dropdown-toggle" data-toggle="dropdown">{{user.name}}</a>
+		<div class="dropdown-menu">
+		    <a class="dropdown-item" href="dashboard.html">dashboard</a>
+		    <a class="dropdown-item" href="#" ng-click="logout()">logout</a>
+		</div>
 		<a href="#">Customer Care</a>
 		<a href="#"><span class="fa fa-heart-o"></span></a>
 		<a href="#" class="cart-link">
@@ -17,17 +22,16 @@
 	<li class="mydropdown">
 		<a href="#" >COLLECTION</a>
 		<ul class="my-dropdown-menu dark-blue-bg">
-			<li><a href="#">MEN</a></li>
+			<li><a href="products.html">MEN</a></li>
 			<li><a href="#">WOMEN</a></li>
-			<li><a href="#">WOMEN</a></li>
-			<li><a href="#">WOMEN</a></li>
-			<li><a href="#">WOMEN</a></li>
+			<li><a href="#">HomeDecore</a></li>
 			<li><a href="#">WOMEN</a></li>
 		</ul>
 	</li>
 	<li><a href="index.html">LOGO</a></li>
 	<li><a href="#">HOME DECOR</a></li>
 	<li><a href="#">SALE</a></li>
+	
 	<li><a href="#" class="search-link"><span class="input-box"><input type="text" name="search" placeholder="Search for any products, brands etc.." class="hide-input"></span><span class="fa fa-search"></span></a></li>
 </ul>
 <nav class="sm-nav dark-blue-bg">

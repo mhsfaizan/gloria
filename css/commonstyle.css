@@ -119,3 +119,6 @@ p{
     padding: 0px 6px;
     font-size: 10px;
 }
+.disable{
+	cursor: not-allowed;
+}
