@@ -12,7 +12,6 @@ app.config(($routeProvider,$locationProvider)=>{
 	.when("/",{
 		templateUrl:"pages/login.php"
 	})
-	
 	.when("/logout",{
 		resolve:{
 			deadresolve:(saveData,$location)=>{

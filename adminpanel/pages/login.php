@@ -1,10 +1,10 @@
-<section id="login-sec-1" login-dir ng-controller="loginController">
+<section id="login-sec-1" >
 	<div class="login-box">
 		<div class="login-header">
 			<h2 class="text-white">Login</h2>
 		</div>
 		<div class="login-body">
-			<form name="adminLoginForm" ng-submit="onSubmit($event.target)">
+			<form name="adminLoginForm" >
 				<div class="form-group">
 					<span class="input-label">Username:</span>
 					<input type="text" name="username" id="usernameid" class="input-box" autocomplete="off" ng-model="username" required>
