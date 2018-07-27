@@ -39,7 +39,7 @@
 		}
 		public static function signUp($post){
 			if($post['name']==""){
-				$resp['message'] = "Enter Name Please";
+				$resp['message'] = "Please Enter Name ";
 				$resp['status'] = 2;
 				echo json_encode($resp);
 			}
