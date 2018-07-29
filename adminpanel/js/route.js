@@ -1,8 +1,8 @@
 app.config(($routeProvider,$locationProvider)=>{
 	var myresolve = ()=>{
 		return {
-			"check":($location,saveData)=>{
-				if(!saveData.isLoggedIn()){
+			"check":($location,saveLocal)=>{
+				if(!saveLocal.isLoggedIn()){
 					$location.path("./");
 				}
 			}
@@ -12,13 +12,21 @@ app.config(($routeProvider,$locationProvider)=>{
 	.when("/",{
 		templateUrl:"pages/login.php"
 	})
+	.when("/dashboard",{
+		resolve:myresolve(),
+		templateUrl:"pages/dashboard.php"
+	})
 	.when("/logout",{
 		resolve:{
-			deadresolve:(saveData,$location)=>{
-				saveData.clearData();
+			deadresolve:(saveLocal,$location)=>{
+				saveLocal.clearData();
 				$location.path("./");
 			}
 		}
+	})
+	.when("/add-product",{
+		resolve:myresolve(),
+		templateUrl:"pages/add-product.php"
 	})
 	.otherwise({
 		templateUrl:"pages/login.php"

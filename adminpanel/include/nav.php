@@ -11,14 +11,13 @@
 			</div>
 		</div>
 		<div class="heading">
-			<a href="#"><img src="image/logo.png"></a>
-			<a href="#"><strong>ARCHUE</strong></a>
+			<a href="#"><strong>Gloria</strong></a>
 		</div>
 	</div>
 	<!-- Smalll Device Navbar  -->
 	<nav id="sidenav">
 		<ul class="sidenav-list">
-			<li class="sidenav-li"><a class="sidenav-link" href="./blogs">BLOG</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./add-product">Add Product</a></li>
 			<li class="sidenav-li"><a class="sidenav-link" href="./projects">PROJECTS</a></li>
 			<li class="sidenav-li"><a class="sidenav-link" href="./portfolio">PORTFOLIO</a></li>
 			<li class="sidenav-li"><a class="sidenav-link" href="./thesis-report">THESIS REPORT</a></li>
@@ -38,4 +37,3 @@
 		</ul>
 	</nav>
 </header>
-<div class="nav-space-small-device"></div>

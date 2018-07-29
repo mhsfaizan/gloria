@@ -27,4 +27,5 @@
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
 	<link rel="stylesheet" type="text/css" href="css/loginstyle.css">
 	<link rel="stylesheet" type="text/css" href="css/footerstyle.css">
+	<link rel="stylesheet" type="text/css" href="css/add-product.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">

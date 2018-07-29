@@ -11,7 +11,7 @@
  		// self::$password = "Proton@123";
  		self::$password = "";
  		// self::$database = "u633907236_arch";
- 		self::$database = "archue";
+ 		self::$database = "gloria";
  		$conn = new mysqli(self::$server,self::$user,self::$password,self::$database);
  		if($conn->connect_error){
  			return $conn->connect_error;

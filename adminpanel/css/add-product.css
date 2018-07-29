@@ -1,0 +1,36 @@
+.product-form-container{
+	border:1px solid grey;
+	border-top:0;
+
+}
+.tabs-container{
+	border:1px solid grey;
+	border-left: 0;
+	border-right: 0;
+	display: flex;
+}
+.tabs-container button{
+	background: transparent;
+	border:0;
+	padding: .5rem 3rem;
+	outline: none;
+	cursor: pointer;
+}
+.tabs-container button:not(:first-child){
+	border-left: 1px solid;
+}
+button.btn-active{
+	background-color: #0c5aad;
+	color: #fff;
+}
+.main-add-product{
+	padding: 2rem 0rem;
+}
+@media(max-width: 400px){
+	.tabs-container button{
+		padding:.5rem; 
+	}
+}
+.price table{
+	min-width: 700px;
+}

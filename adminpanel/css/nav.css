@@ -74,10 +74,7 @@
 .nav-bottom-container .dropdown-menu>a{
 	color: #fff;
 }	
-.nav-space-small-device{
-	width: 100%;
-	height: 90px;
-}
+
 #sidenav{
 	display: block;
 	width: 270px;
