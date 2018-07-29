@@ -1,10 +1,12 @@
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lemon" />
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT');
+
 /*Utilities*/
 *{
-	font-family: Lemon;
+	font-family: 'Crimson Text', serif;
 	margin: 0;
 	padding: 0;
-	border:1px solid red;
 }
 ul,ol,dl{
 	margin: 0;
@@ -34,6 +36,15 @@ p{
 .btn-light{
     background-color: #d8dbde;
 }
+.full-width-btn{
+	width: 100%;
+	transition: all 0.2s linear;
+}
+.full-width-btn:hover{
+	background-color: #009688;
+	border-color: transparent!important;
+}
+
 /*Backgrounds Colors*/
 .dark-blue-bg{
 	background-color: #0c5aad;
@@ -56,6 +67,10 @@ p{
 .dark-yellow-bg{
 	background-color: #ede1b2;
 }
+.transparent-bg{
+	background-color: transparent;
+}
+
 
 /*Fonts*/
 .dark-blue-font{
@@ -64,6 +79,13 @@ p{
 .dark-pink-font{
 	color: #fa845c;
 }
+.bold-yellow-font{
+	font-style: italic;
+    color: yellow;
+    font-weight: 800;
+    font-family: 'Old Standard TT', serif;
+}
+
 
 /*Image Hover Effects*/
 .wrapper-container{
@@ -98,6 +120,7 @@ p{
 .wrapper-layer:hover.wrapper-layer>p{
 	top: 40%;
 }
+
 
 /*Scale Effect*/
 .scale-container{
