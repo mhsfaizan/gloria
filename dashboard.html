@@ -1,13 +1,132 @@
 	<?php include('inc/links.html'); ?>
-	<link rel="stylesheet" type="text/css" href="css/signup.css">
-	<title>Gloria dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/dashboard.css">
+	<title>Gloria- Dashboard</title>
 </head>
 <body>
 	<?php include('inc/navbar.html'); ?>
+	<div class="card light-grey-bg text-dark">
+	    <div class="card-body">
+			<div class="container">
+				<h5 class="pull-left"><b>DASHBOARD</b></h5>
+				<p class="pull-right"><b>Home > Dashboard</b></p>
+			</div>
+	    </div>
+	</div>
 	<section id="dashboard" ng-controller="dashboardController">
-		<div class="dashboard-container">
-			
+		<div class="container">
+			<div class="space"></div>
+			<div class="card">
+			  	<div class="card-header">My Orderes
+			  	</div>
+			  	<div class="card-body">
+			  		<div class="order-div table-responsive">
+			  			<table class="table table-bordered text-center">
+						    <tbody>
+						    	<tbody>
+							      	<tr>
+								        <td>
+								        	<img src="img/prod-1.jpg" class="img-fluid prod-img">
+								        </td>
+								        <td>
+								        	<h6>Product Name</h6>
+								        	<p>Size: </p>
+								        	<p>Product ID: </p>
+								        	<p>Payment: <span class="text-success"><b>Paid</b></span></p>
+								        </td>
+								        <td>
+								        	<p><b>&#8377; 299</b></p>
+								        </td>
+								        <td>
+								        	<div id="quantity" class="border border-dark">01</div>
+								        </td>
+								        <td>
+								        	<p><b>&#8377; 299</b></p>	
+								        </td>
+								        <td>
+								        	<a href="track.html"><span class="fa fa-map-marker"></span> Track</a><br>	
+								        	<a href="#"><span class="fa fa-times"></span> Cancel</a>
+								        </td>
+							      	</tr>
+							      	<tr>
+								        <td>
+								        	<img src="img/prod-1.jpg" class="img-fluid prod-img">
+								        </td>
+								        <td>
+								        	<h6>Product: Name</h6>
+								        	<p>Size: </p>
+								        	<p>Product ID: </p>
+								        	<p>Payment: <span class="text-success"><b>COD</b></span></p>
+								        </td>
+								        <td>
+								        	<p><b>&#8377; 299</b></p>
+								        </td>
+								        <td>
+								        	<div id="quantity" class="border border-dark">01</div>
+								        </td>
+								        <td>
+								        	<p><b>&#8377; 299</b></p>	
+								        </td>
+								        <td>
+								        	<a href="track.html"><span class="fa fa-map-marker"></span> Track</a><br>	
+								        	<a href="#"><span class="fa fa-times"></span> Cancel</a>
+								        </td>
+							      	</tr>
+							      	<tr>
+								        <td>
+								        	<img src="img/prod-1.jpg" class="img-fluid prod-img">
+								        </td>
+								        <td>
+								        	<h6>Product Name</h6>
+								        	<p>Size: </p>
+								        	<p>Product ID: </p>
+								        	<p>Payment: <span class="text-success"><b>COD</b></span></p>
+								        </td>
+								        <td>
+								        	<p><b>&#8377; 299</b></p>
+								        </td>
+								        <td>
+								        	<div id="quantity" class="border border-dark">01</div>
+								        </td>
+								        <td>
+								        	<p><b>&#8377; 299</b></p>	
+								        </td>
+								        <td>
+								        	<a href="track.html"><span class="fa fa-map-marker"></span> Track</a><br>	
+								        	<a href="#"><span class="fa fa-times"></span> Cancel</a>
+								        </td>
+							      	</tr>
+							    </tbody>
+						    </tbody>
+						</table>
+			  		</div>
+			  	</div> 
+			</div>
+
+			<div class="space"></div>
+			<div class="card">
+			  	<div class="card-header">My Personal Information &nbsp;&nbsp;<a href="#"><span class="fa fa-edit"></span> Edit</a>
+			  	</div>
+			  	<div class="card-body">
+			  		<div class="container-fluid">
+			  			<div class="row">
+			  				<div class="col-sm-12 col-md-6">
+			  					Name: Aeshar
+			  				</div>
+			  				<div class="col-sm-12 col-md-6">
+			  					Email : aeshare@hmail.cpom
+			  				</div>
+			  			</div>
+			  			<div class="row">
+			  				<div class="col-sm-12 col-md-6">
+			  					Mob: Aeshar
+			  				</div>
+			  				<div class="col-sm-12 col-md-6">
+			  					Password : ***** &nbsp;&nbsp;<a href="#"><span class="fa fa-edit"></span> Change Password</a>
+			  				</div>
+			  			</div>
+			  		</div>
+			  	</div>
+			</div>
 		</div>
 	</section>
 	<?php include('inc/footer.html'); ?>
-	

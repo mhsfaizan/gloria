@@ -10,6 +10,11 @@
 .contact-from-div{
 	width: 75%;
 }
+@media(max-width: 768px){
+	.contact-from-div{
+		width: 90%;
+	}	
+}
 
 /*Map*/
 #map-sec{
@@ -22,11 +27,17 @@
 .address-div{
 	position: absolute;
 	bottom: -1px;
-	left: 20%;
+	right: 20px;
 	box-shadow: 0px 2px 10px #ababab;
 	width: 300px;
 	padding: 20px 10px;
 	background-color: #fff;
+}
+@media(max-width: 768px){
+	.address-div{
+		position: static;
+		width: 100%;
+	}	
 }
 .icon{
 	background-color: #0898a5;

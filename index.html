@@ -135,15 +135,17 @@
 				<h1 class="lighting-text">LIGHTENING DEALS</h1>
 			</div>
 			<div class="lighting-sale-time text-center">
-				<h1 class="m-3"><b>ENDS IN</b> 
-					<span class="time">1</span>
-					<span class="time">2</span>
+				
+				<!-- Display the countdown timer in an element -->
+				<!-- <p id="demo"></p> -->
+				<h1 class="m-3" id="demo"><b>ENDS IN</b> 
+					<span class="time"></span>
 					<span>:</span>
-					<span class="time">1</span>
-					<span class="time">2</span>
+					<span class="time"></span>
 					<span>:</span>
-					<span class="time">1</span>
-					<span class="time">2</span>
+					<span class="time"></span>
+					<span>:</span>
+					<span class="time"></span>
 				</h1>
 			</div>
 		</div>
@@ -293,7 +295,7 @@
 		<div class="container-fluid">
 			<div class="row text-center">
 				<div class="col-lg-4 col-md-4 col-sm-6 col-12">
-					<p><a href="#">Track Order</a></p>
+					<p><a href="track-order.html">TRACK ORDER</a></p>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-6 col-12">
 					<p><a href="#">FREE &amp; EASY RETURN</a></p>
@@ -304,6 +306,53 @@
 			</div>
 		</div>
 	</section>
+
+	<script>
+	
+	// Set the date we're counting down to
+	var countDownDate = new Date("Aug 5, 2018 15:37:25").getTime();
+
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+
+	  // Get todays date and time
+	  var now = new Date().getTime();
+
+	  // Find the distance between now an the count down date
+	  var distance = countDownDate - now;
+
+	  // Time calculations for days, hours, minutes and seconds
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	  // Display the result in the element with id="demo"
+	  // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+	  // + minutes + "m " + seconds + "s ";
+
+  		var times = document.getElementsByClassName('time');
+	  	
+	  	/*Hour*/
+	  	times[0].innerHTML =  days + 'D';
+
+	  	/*Hour*/
+	  	times[1].innerHTML =  hours + 'H';
+	  	
+	  	/*Min*/
+	  	times[2].innerHTML =  minutes + 'M';
+
+	  	/*Sec*/
+		times[3].innerHTML =  seconds + 'S';
+
+	  // If the count down is finished, write some text 
+	  if (distance < 0) {
+	    clearInterval(x);
+	    document.getElementById("demo").innerHTML = "EXPIRED";
+	  }
+	}, 1000);
+	</script>
+
 	<!-- Image Gallery JS -->
 	<script src="js/lightbox.min.js"></script>
 	

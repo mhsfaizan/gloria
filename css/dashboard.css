@@ -1,4 +1,17 @@
-.dashboard-container{
-	border:1px solid grey;
-	padding:10px; 
+.prod-img{
+	height: 100px;
+}
+#quantity{
+	width: 61px;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 0 auto;
+}
+.order-div table tbody tr td{
+	padding: 0px;
+	vertical-align: middle;
+}
+.order-div table{
+	min-width: 500px;
+	overflow: scroll;
 }

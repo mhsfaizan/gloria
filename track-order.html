@@ -1,0 +1,36 @@
+	<?php include('inc/links.html'); ?>
+	<link rel="stylesheet" type="text/css" href="css/track-orderstyle.css">
+	<title>Track Order- Gloria</title>
+</head>
+<body>
+	<?php include('inc/navbar.html'); ?>
+	<div class="card light-grey-bg text-dark">
+	    <div class="card-body">
+			<div class="container">
+				<h5 class="pull-left"><b>TRACK ORDER</b></h5>
+				<p class="pull-right"><b>Home > Customer Care</b></p>
+			</div>
+	    </div>
+	</div>
+	<section id="track-sec">
+		<div class="track-div">
+			<div class="track-form border border-warning text-white">
+				
+				<form>
+					<div class="form-group">
+						<label for="trackid"><span class="fa fa-map-marker"></span> Track Your Order</label>
+						<input type="text" name="track" id="trackid" class="form-control" placeholder="Enter Your 10-Digit Tracking ID">
+					</div>
+					<div class="full-width-btn-div">
+						<button class="full-width-btn btn transparent-bg border border-light text-white">Track</button>
+					</div>
+				</form>
+				
+				<div class="space"></div>
+				<div class="alert alert-success">
+					<p><b>Note:</b> Your 10-Digit Tracking ID has been sent to your registered mobile number at the time of booking</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php include('inc/footer.html'); ?>

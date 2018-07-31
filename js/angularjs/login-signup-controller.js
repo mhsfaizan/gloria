@@ -1,4 +1,5 @@
 app.run((saveLocal,$rootScope)=>{
+	$rootScope.user = saveLocal.getUser();
 	$rootScope.setUser = ()=>{
 		$rootScope.user = saveLocal.getUser();
 	}
@@ -32,9 +33,9 @@ app.controller("loginController",($scope,loginSignup,saveLocal,$rootScope)=>{
 
 
 app.controller("dashboardController",($scope,$rootScope,saveLocal)=>{
-	$rootScope.setUser();
+	// $rootScope.setUser();
 	if(!saveLocal.isLoggedIn()){
-		window.location.href = "index.html";
+		window.location.href = "login.html";
 	}
 });
 
