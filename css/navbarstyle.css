@@ -63,6 +63,75 @@ ul.lg-nav li>a{
     padding: 0px;
     opacity: 0;	
 }
+
+/*Dropdown style*/
+li.mydropdown{
+	position: relative;
+}
+ul.my-dropdown-menu{
+	visibility: hidden;
+	padding-top: 1rem;
+	list-style: none; 
+	transition: all .2s linear;
+	position: absolute;
+	left: 0;
+	padding-left: 0;
+	top: 150%;
+	width:190px;
+	z-index: 1;
+}
+ul.my-dropdown-menu li a{
+	display: block;
+    padding: 8px 20px;
+    transition: all 0.2s linear;
+}
+ul.my-dropdown-menu>li>a:hover{
+	background-color: #000;
+}
+@media(min-width:1000px){
+	.mydropdown:hover .my-dropdown-menu{
+		visibility: visible;
+		top: 100%;
+	}
+}
+.mydropdown-menu{
+	display: none;
+	padding-left: 2rem;
+}
+.mydropdown-menu-show{
+	display: block;
+}
+.mydropdown-menu a{
+	display: block;
+}
+
+/*Subdrop down */
+.sub-dropdown-btn{
+	position: relative;
+}
+.sub-dropdown-menu{
+	position: absolute;
+	top: 0;
+	left: 100%;
+	background-color: #000;
+	width: 190px;
+	display: none;
+}
+.sub-dropdown-btn:hover .sub-dropdown-menu{
+	display: block;	
+}
+.sub-dropdown-menu>li{
+	list-style: none;
+}
+.sub-dropdown-menu>li>a{
+	color: #fff;
+}
+.sub-dropdown-menu>li>a:hover{
+	color: #000;
+	background-color: #fff;
+}
+
+
 /*Mobile Nav*/
 .sm-nav{
 	display: none;
@@ -121,16 +190,6 @@ ul.lg-nav li>a{
 	    height: 42px;
 	    right: 58px;
 	}
-	/*.show-input{
-	    width: 335px;
-	    padding: 6px 12px;
-	    opacity: 1;
-	}
-	.hide-input{
-	 	width: 0px;
-	    padding: 0px;
-	    opacity: 0;	
-	}*/
 }
 @media(min-width: 320px) and (max-width: 550px){
 	.sm-nav-container{
@@ -246,44 +305,4 @@ ul.lg-nav li>a{
 	left: 0;
 	right: 0;
 	background-color: rgba(0,0,0,0.5);
-}
-
-/*drop down style*/
-li.mydropdown{
-	position: relative;
-}
-ul.my-dropdown-menu{
-	visibility: hidden;
-	padding-top: 1rem;
-	list-style: none; 
-	transition: all .2s linear;
-	position: absolute;
-	left: 0;
-	padding-left: 0;
-	top: 150%;
-	width:190px;
-	z-index: 1;
-}
-ul.my-dropdown-menu li a{
-	display: block;
-    padding: .1rem 2rem .6rem 2rem;
-}
-
-@media(min-width:768px){
-	.mydropdown:hover .my-dropdown-menu{
-		visibility: visible;
-		top: 100%;
-	}
-}
-
-/*small navigation*/
-.mydropdown-menu{
-	display: none;
-	padding-left: 2rem;
-}
-.mydropdown-menu-show{
-	display: block;
-}
-.mydropdown-menu a{
-	display: block;
 }
