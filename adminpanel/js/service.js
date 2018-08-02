@@ -19,6 +19,34 @@ app.service("adminService",function($http){
 		})
 		.then((resp)=>cb(resp.data),(err)=>console.log(err));
 	}
+
+	this.uploadProduct = (productDetails,cb)=>{
+		var fd = this.formConvert(productDetails);
+		$http({
+			method:'POST',
+			data:fd,
+			url:"php/upload-product.php",
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>cb(resp.data),(err)=>console.log(err));
+	}
+	this.submitSize = (mydata,imgArr,cb)=>{
+		var fd = this.formConvert(mydata);
+		angular.forEach(imgArr,(file)=>{
+			fd.append('imgAr[]',file);
+		})
+		$http({
+			method:"POST",
+			data:fd,
+			url:"php/upload-size.php",
+			headers:{
+				"Content-Type":undefined
+			}
+		})
+		.then((resp)=>cb(resp.data),(err)=>console.log(err));
+	}
 })
 
 app.service("saveLocal",function(){
@@ -37,3 +65,4 @@ app.service("saveLocal",function(){
 		sessionStorage.clear();
 	}
 })
+

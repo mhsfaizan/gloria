@@ -32,44 +32,27 @@ app.directive("productDir",()=>{
 				elem.find(".tabs-container button").removeClass("btn-active");
 				elem.find(".tabs-container button:last-child").addClass("btn-active");
 			});
-			elem.find(".add-color-row").click((event)=>{
-				scope.$apply(()=>{
-					scope.colorObject.color = angular.element(event.target).prev().find("input[name~='color']").val();
-					scope.Attr.colorArr.push(scope.colorObject);
-					console.log(scope.Attr.colorArr);
-				});
-				var span = `<span>		        
-				           		<input type='text' name='color' placeholder='enter color' class='form-control'><br>
-								<input type='file' name='image' class='form-control'>
-							</span>`;
-				angular.element(event.target).before(span);
-			});
-			elem.find(".add-more-size").click(()=>{
-				var row = `
-				            <tr>
-						        <td align="center">
-						        	<select class="form-control">
-						        		<option>Select Size</option>
-						        		<option>XL</option>
-						        		<option>L</option>
-						        		<option>M</option>
-						        		<option>S</option>
-						        	</select>
-						        </td>
-						        <td align="center">
-						        	<span>
-						        		<input type="text" name="" placeholder="enter color" class="form-control"><br>
-							        	<input type="file" name="" class="form-control">
-						        	</span>
-						        	
-						        	<a href="#" class="add-color-row">Add +</a>
-						        </td>
-						        <td><input type="number" name="" placeholder="Enter Price" class="form-control"></td>
-						        <td><input type="number" name="" placeholder="Discount" class="form-control" ng-model="discount" required></td>
-						     </tr>
-				          `;
-			    elem.find(".add-more-size").parent().parent().before(row);
-			});
+			// elem.find(".add-more-size").click((event)=>{
+			//   scope.isSave = true;
+			//  scope.colorObj.color = scope.color;
+			//   scope.sizeObj.size = scope.size;
+			//   scope.sizeObj.color = scope.colorObj;
+			//   scope.sizeObj.price = scope.price;
+			//   scope.sizeObj.discount = scope.discount;
+			//   scope.sozeObjArr.push(scope.sizeObj);
+			//   scope.colorObj = {
+			// 		color:'',
+			// 		imagesArr:[]
+			//   }
+			//   scope.sizeObj = { 
+			// 		size:'',
+			// 		color:{},
+			// 		price:'',
+			// 		discount:''
+			//    } 
+			//   console.log(scope.sozeObjArr);
+			//   elem.find("form[name='sizeForm']")[0].reset();
+			// });
 		}
 	}
 });
@@ -77,11 +60,8 @@ app.directive("productDir",()=>{
 app.directive("colorImg",()=>{
 	return{
 		link:(scope,elem,attr)=>{
-			elem.change((event)=>{
-				scope.$apply(()=>{
-					scope.colorObject.images.push(event.target.files[0]);
-					console.log(scope.colorObject.images);
-				});
+			elem.bind('change',(event)=>{
+					scope.imagesArr.push(event.target.files[0]);
 			});
 		}
 	}
@@ -94,11 +74,15 @@ app.directive("validFile",()=>{
 			ngModel.$render = function () {
                 ngModel.$setViewValue(elem.val());
             };
-			elem.change(()=>{
-				scope.$apply(()=>{
-					ngModel.$render();
-
-				});
+			elem.bind('change',(e)=>{
+				if(elem.val()!=""){
+					scope.$apply(()=>{
+						ngModel.$render();
+					});
+				}
+				else{
+					console.log(elem.val());
+				}
 			})
 		}
 	}

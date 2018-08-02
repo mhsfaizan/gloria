@@ -2,7 +2,6 @@ app.run(($rootScope,saveLocal)=>{
 	$rootScope.showNav = saveLocal.isLoggedIn();
 	$rootScope.setUser = ()=>{
 		$rootScope.showNav = saveLocal.isLoggedIn();
-		console.log($rootScope.showNav);
 	}
 })
 
@@ -23,16 +22,18 @@ app.controller("adminLoginCtrl",($scope,$rootScope,saveLocal,adminService,$locat
 })
 
 
-app.controller("productCtrl",($scope)=>{
-	$scope.Attr = {
+app.controller("productCtrl",($scope,adminService)=>{
+	$scope.isSave = false;
+	$scope.sozeObjArr = [];
+	$scope.sizeObj = { 
 		size:'',
-		colorArr:[],
+		color:{},
 		price:'',
-		descount:''
-	};
-	$scope.colorObject = {
+		discount:''
+	} 
+	$scope.colorObj = {
 		color:'',
-		images:[]
+		imagesArr:[]
 	}
 	$scope.isShowPro = true;
 	$scope.showProduct = ()=>{
@@ -55,25 +56,45 @@ app.controller("productCtrl",($scope)=>{
 	];
 	$scope.cat = $scope.categories[0];
 	$scope.subCat = $scope.categories[0].subCategory[0];
-	var prodDetails = {
-		productInfo:{},
-		productAttr:[] 
-	};
+	var prodDetails = {};
 	$scope.onProSubmit = (form)=>{
-		prodDetails.productInfo.productName = $scope.productName;
-		prodDetails.productInfo.cat = $scope.cat.item;
-		prodDetails.productInfo.subCat = $scope.subCat;
-		prodDetails.productInfo.description = $scope.description;
-		console.log(prodDetails.productInfo);
+		prodDetails.productName = $scope.productName;
+		prodDetails.cat = $scope.cat.item;
+		prodDetails.subCat = $scope.subCat;
+		prodDetails.description = $scope.description;
+		adminService.uploadProduct(prodDetails,(data)=>{
+			if(data.status==1){
+				$scope.proId = data.data.product_id;
+				alert("uploaded Product Succesfully");
+				$scope.hideProduct();
+				form.reset();
+			}
+			else{
+				alert("Your Product is not uploaded");
+				form.reset();
+			}
+		});
 	}
 	$scope.size = "Select Size"
 	var attr = {};
+	$scope.imagesArr = [];
 	$scope.onSizeSub = (form)=>{
 		attr.size = $scope.size;
 		attr.color = $scope.color;
-		attr.images = $scope.images;
 		attr.price = $scope.price;
+		attr.proId = $scope.proId;
 		attr.discount = $scope.discount;
-		console.log(attr);
+		adminService.submitSize(attr,$scope.imagesArr,(data)=>{
+			if(data.status==1){
+				alert(data.data+"Please Add More Sizes Of your Products");
+				form.reset();
+			}
+			else if(data.status==3){
+				alert(data.data);
+			}
+			else{
+				alert("Server Error");
+			}
+		})
 	}
 })

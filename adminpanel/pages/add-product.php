@@ -2,7 +2,7 @@
 		<div class="container">
 			<div class="product-form-container">
 				<div class="tabs-container">
-					<button class="btn-active" ng-click="showProduct()">Information</button>
+					<button class="btn-active" ng-click="showProduct()">Product Information</button>
 					<button ng-click="hideProduct()">Prices</button>
 				</div>
 				<div class="main-add-product">
@@ -36,12 +36,13 @@
 									</div> 
 								</div>
 							</div>
-							<button class="btn btn-primary" ng-click="hideProduct()" ng-disabled="!productForm.$valid">Next</button>
+							<button class="btn btn-primary"  ng-disabled="!productForm.$valid">Next</button>
 						</form>
 
 					</div>
 					<div class="price table-responsive pl-2 pr-2" ng-hide="isShowPro">
-						<form class="text-center" name="sizeForm" ng-submit="onSizeSub($event.target)">
+						
+						<form class="text-center" name="sizeForm" ng-submit="onSizeSub($event.target)" >
 							<table class="table table-bordered">
 							    <thead>
 							      <tr>
@@ -54,7 +55,7 @@
 							    <tbody>
 							      <tr>
 							        <td align="center">
-							        	<select class="form-control" ng-model="size">
+							        	<select class="form-control" name='size' ng-model="size">
 							        		<option>{{size}}</option>
 							        		<option>XL</option>
 							        		<option>L</option>
@@ -63,23 +64,21 @@
 							        	</select>
 							        	
 							        </td>
-							        <td align="center">
-							        	<span>
-							        		<input type="text" name="color" placeholder="enter color" class="form-control" ng-model="color" required><br>
+							        <td align="center" >
+							        	<span >
+							        		<input type="text" name="color" placeholder="Enter color seperate from comas(,)" class="form-control" ng-model="color" required><br>
 								        	<input type="file" name="image" class="form-control" ng-model="images" required  valid-file color-img>
-							        	</span>
-							        	
-							        	<a href="#" class="add-color-row">Add +</a>
+							        	</span><br>
 							        </td>
-							        <td><input type="number" name="" placeholder="Enter Price" class="form-control" ng-model="price" required></td>
-							        <td><input type="number" name="" placeholder="Discount" class="form-control" ng-model="discount" required></td>
+							        <td><input type="number" name="price" placeholder="Enter Price" class="form-control" ng-model="price" required></td>
+							        <td><input type="number" name="discount" placeholder="Discount" class="form-control" ng-model="discount" required></td>
 							      </tr>
 							      <tr>
-							      	<td colspan="4"><a href="#" class="add-more-size">Add More Rows</a></td>
+							      	<!-- <td colspan="4"><button type="button" href="#" class="add-more-size btn btn-primary" ng-disabled="!sizeForm.$valid">Save and Add More Sizes</button></td> -->
 							      </tr>
 							    </tbody>
 							</table>
-							<button class="btn btn-primary" ng-disabled="!sizeForm.$valid">Upload Product</button>
+							<button  class="btn btn-primary" ng-disabled="!sizeForm.$valid">Upload Product</button>
 						</form>
 					</div>
 				</div>
