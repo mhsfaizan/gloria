@@ -1,3 +1,6 @@
+*{
+	font-size: 16px;
+}
 .prod-img{
 	height: 100px;
 }
@@ -8,7 +11,7 @@
     margin: 0 auto;
 }
 .order-div table tbody tr td{
-	padding: 0px;
+	padding: 15px 0px;
 	vertical-align: middle;
 }
 .order-div table{

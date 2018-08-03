@@ -8,13 +8,14 @@
 	text-decoration: none;
 	padding: 5px 10px;
 	transition: all 0.2s linear;
+	margin: 0px 5px;
 }
 .sort-btns > a:first-child{
 	margin-left: 10px;
 }
 .sort-btns > a:hover{
-	background-color: #555;
 	color: #fff;
+	background-color: #555;
 }
 @media(min-width: 350px) and (max-width: 768px){
 	.sort-btns{
@@ -39,6 +40,11 @@
 		width: 100%;
 		margin: 0;
 	}
+}
+/*active sort btn*/
+.active-sort-btn{
+	color: #fff!important;
+	background-color: #555;	
 }
 
 /*Filters Part*/
@@ -96,12 +102,12 @@
 .product-container{
 	position: relative;
 	transition: all 0.2s linear;
-	box-shadow: 0px 2px 2px #ababab;
+	box-shadow: 0px 0px 2px #ababab;
 	margin-top: 20px;
 	padding: 20px 0px;
 }
 .product-container:hover{
-	box-shadow: 0px 10px 15px #ababab;
+	box-shadow: 0px 0px 15px #ababab;
 }
 .product-div{
 	text-decoration: none!important;
