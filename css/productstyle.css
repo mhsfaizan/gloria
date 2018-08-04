@@ -137,8 +137,10 @@
 /*Single Product*/
 .bigger-img{
 	position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 .thumbnails{
 	height: 100px;
 }
