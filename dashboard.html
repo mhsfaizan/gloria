@@ -1,4 +1,11 @@
 	<?php include('inc/links.html'); ?>
+	<!-- Now UI Kit CSS-->
+	<link href="now-ui-kit/assets/css/now-ui-kit.css" rel="stylesheet" />	
+
+	<!-- Now UI Kit JS-->
+	<!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+	<script src="now-ui-kit/assets/js/now-ui-kit.js" type="text/javascript"></script>
+
 	<link rel="stylesheet" type="text/css" href="css/dashboard.css">
 	<title>Gloria- Dashboard</title>
 </head>
@@ -8,105 +15,101 @@
 	    <div class="card-body">
 			<div class="container">
 				<h5 class="pull-left"><b>DASHBOARD</b></h5>
-				<p class="pull-right"><b>Home > Dashboard</b></p>
+				<p class="pull-right"><b><a href="./">Home</a> > Dashboard</b></p>
 			</div>
 	    </div>
 	</div>
 	<section id="dashboard" ng-controller="dashboardController">
 		<div class="container">
-			<div class="space"></div>
 			<div class="card">
-			  	<div class="card-header">My Orderes
-			  	</div>
-			  	<div class="card-body">
-			  		<div class="order-div table-responsive">
-			  			<table class="table table-bordered text-center">
-						    <tbody>
-						    	<tbody>
-							      	<tr>
-								        <td>
-								        	<img src="img/prod-1.jpg" class="img-fluid prod-img">
-								        </td>
-								        <td>
-								        	<h6>Product Name</h6>
-								        	<p>Size: </p>
-								        	<p>Product ID: </p>
-								        	<p>Payment: <span class="text-success"><b>Paid</b></span></p>
-								        </td>
-								        <td>
-								        	<p><b>&#8377; 299</b></p>
-								        </td>
-								        <td>
-								        	<div id="quantity" class="border border-dark">01</div>
-								        </td>
-								        <td>
-								        	<p><b>&#8377; 299</b></p>	
-								        </td>
-								        <td>
-								        	<a href="track.html"><span class="fa fa-map-marker"></span> Track</a><br>	
-								        	<a href="#"><span class="fa fa-times"></span> Cancel</a>
-								        </td>
-							      	</tr>
-							      	<tr>
-								        <td>
-								        	<img src="img/prod-1.jpg" class="img-fluid prod-img">
-								        </td>
-								        <td>
-								        	<h6>Product: Name</h6>
-								        	<p>Size: </p>
-								        	<p>Product ID: </p>
-								        	<p>Payment: <span class="text-success"><b>COD</b></span></p>
-								        </td>
-								        <td>
-								        	<p><b>&#8377; 299</b></p>
-								        </td>
-								        <td>
-								        	<div id="quantity" class="border border-dark">01</div>
-								        </td>
-								        <td>
-								        	<p><b>&#8377; 299</b></p>	
-								        </td>
-								        <td>
-								        	<a href="track.html"><span class="fa fa-map-marker"></span> Track</a><br>	
-								        	<a href="#"><span class="fa fa-times"></span> Cancel</a>
-								        </td>
-							      	</tr>
-							      	<tr>
-								        <td>
-								        	<img src="img/prod-1.jpg" class="img-fluid prod-img">
-								        </td>
-								        <td>
-								        	<h6>Product Name</h6>
-								        	<p>Size: </p>
-								        	<p>Product ID: </p>
-								        	<p>Payment: <span class="text-success"><b>COD</b></span></p>
-								        </td>
-								        <td>
-								        	<p><b>&#8377; 299</b></p>
-								        </td>
-								        <td>
-								        	<div id="quantity" class="border border-dark">01</div>
-								        </td>
-								        <td>
-								        	<p><b>&#8377; 299</b></p>	
-								        </td>
-								        <td>
-								        	<a href="track.html"><span class="fa fa-map-marker"></span> Track</a><br>	
-								        	<a href="#"><span class="fa fa-times"></span> Cancel</a>
-								        </td>
-							      	</tr>
-							    </tbody>
+			  <div class="card-body">
+			    <h4 class="card-title">My Orderes</h4>
+			    <div class="order-div table-responsive">
+		  			<table class="table table-bordered text-center">
+					    <tbody>
+					    	<tbody>
+						      	<tr>
+							        <td>
+							        	<img src="img/prod-1.jpg" class="img-fluid prod-img">
+							        </td>
+							        <td>
+							        	<h6>Product Name</h6>
+							        	<p>Size: </p>
+							        	<p>Product ID: </p>
+							        	<p>Payment: <span class="text-success"><b>Paid</b></span></p>
+							        </td>
+							        <td>
+							        	<p><b>&#8377; 299</b></p>
+							        </td>
+							        <td>
+							        	<div id="quantity" class="border border-dark">01</div>
+							        </td>
+							        <td>
+							        	<p><b>&#8377; 299</b></p>	
+							        </td>
+							        <td>
+							        	<a href="track.html"><span class="fa fa-map-marker"></span> Track</a><br>	
+							        	<a href="#"><span class="fa fa-times"></span> Cancel</a>
+							        </td>
+						      	</tr>
+						      	<tr>
+							        <td>
+							        	<img src="img/prod-1.jpg" class="img-fluid prod-img">
+							        </td>
+							        <td>
+							        	<h6>Product: Name</h6>
+							        	<p>Size: </p>
+							        	<p>Product ID: </p>
+							        	<p>Payment: <span class="text-success"><b>COD</b></span></p>
+							        </td>
+							        <td>
+							        	<p><b>&#8377; 299</b></p>
+							        </td>
+							        <td>
+							        	<div id="quantity" class="border border-dark">01</div>
+							        </td>
+							        <td>
+							        	<p><b>&#8377; 299</b></p>	
+							        </td>
+							        <td>
+							        	<a href="track.html"><span class="fa fa-map-marker"></span> Track</a><br>	
+							        	<a href="#"><span class="fa fa-times"></span> Cancel</a>
+							        </td>
+						      	</tr>
+						      	<tr>
+							        <td>
+							        	<img src="img/prod-1.jpg" class="img-fluid prod-img">
+							        </td>
+							        <td>
+							        	<h6>Product Name</h6>
+							        	<p>Size: </p>
+							        	<p>Product ID: </p>
+							        	<p>Payment: <span class="text-success"><b>COD</b></span></p>
+							        </td>
+							        <td>
+							        	<p><b>&#8377; 299</b></p>
+							        </td>
+							        <td>
+							        	<div id="quantity" class="border border-dark">01</div>
+							        </td>
+							        <td>
+							        	<p><b>&#8377; 299</b></p>	
+							        </td>
+							        <td>
+							        	<a href="track.html"><span class="fa fa-map-marker"></span> Track</a><br>	
+							        	<a href="#"><span class="fa fa-times"></span> Cancel</a>
+							        </td>
+						      	</tr>
 						    </tbody>
-						</table>
-			  		</div>
-			  	</div> 
+					    </tbody>
+					</table>
+		  		</div>
+			  </div>
 			</div>
-
 			<div class="space"></div>
 			<div class="card">
-			  	<div class="card-header">My Personal Information &nbsp;&nbsp;<a href="#"><span class="fa fa-edit"></span> Edit</a>
-			  	</div>
 			  	<div class="card-body">
+			  		<h4 class="card-title">My Personal Information &nbsp;&nbsp;<a href="#" data-toggle="modal" data-target="#editModal"><span class="fa fa-edit"></span> Edit</a></h4>
 			  		<div class="container-fluid">
 			  			<div class="row">
 			  				<div class="col-sm-12 col-md-6">
@@ -121,7 +124,7 @@
 			  					Mob: Aeshar
 			  				</div>
 			  				<div class="col-sm-12 col-md-6">
-			  					Password : ***** &nbsp;&nbsp;<a href="#"><span class="fa fa-edit"></span> Change Password</a>
+			  					Password : ***** &nbsp;&nbsp;<a href="#" data-toggle="modal" data-target="#passChangeModal"><span class="fa fa-edit"></span> Change Password</a>
 			  				</div>
 			  			</div>
 			  		</div>
@@ -129,4 +132,107 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- Edit Details  -->
+	<!-- Modal -->
+	<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Change Personal Info</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <form>
+	        	<div class="input-group">
+				  <div class="input-group-prepend">
+				    <div class="input-group-text"><i class="fa fa-user"></i></div>
+				  </div>
+				  <input type="text" class="form-control" placeholder="Enter Your Name">
+				</div>
+
+				<div class="input-group">
+				  <div class="input-group-prepend">
+				    <div class="input-group-text"><i class="fa fa-phone"></i></div>
+				  </div>
+				  <input type="text" class="form-control" placeholder="Enter Your Mobile Number">
+				</div>
+
+				<p>Verify Your Number</p>
+				<div class="input-group">
+				  <div class="input-group-prepend">
+				    <div class="input-group-text"><i class="fa fa-phone"></i></div>
+				  </div>
+				  <input type="text" class="form-control" disabled placeholder="Enter OTP Send to Your Mobile " id="mobile-verify">
+				</div>
+
+				<div class="input-group">
+				  <div class="input-group-prepend">
+				    <div class="input-group-text"><i class="fa fa-envelope-o"></i></div>
+				  </div>
+				  <input type="text" class="form-control" placeholder="Enter Your Email ID">
+				</div>
+
+				<p>Verify Your Email</p>
+				<div class="input-group">
+				  <div class="input-group-prepend">
+				    <div class="input-group-text"><i class="fa fa-envelope-o"></i></div>
+				  </div>
+				  <input type="text" class="form-control" disabled placeholder="Enter OTP Send to Your Mobile " id="email-verify">
+				</div>
+	        </form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Pass Change Details  -->
+	<!-- Modal -->
+	<div class="modal fade" id="passChangeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <form>
+	        	<div class="input-group">
+				  <div class="input-group-prepend">
+				    <div class="input-group-text"><i class="fa fa-lock"></i></div>
+				  </div>
+				  <input type="text" class="form-control" placeholder="Enter Old Password">
+				</div>
+
+				<div class="input-group">
+				  <div class="input-group-prepend">
+				    <div class="input-group-text"><i class="fa fa-lock"></i></div>
+				  </div>
+				  <input type="text" class="form-control" placeholder="Enter New Password">
+				</div>
+
+				<div class="input-group">
+				  <div class="input-group-prepend">
+				    <div class="input-group-text"><i class="fa fa-lock"></i></div>
+				  </div>
+				  <input type="text" class="form-control" placeholder="Confirm Your News Password">
+				</div>
+	        </form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
 	<?php include('inc/footer.html'); ?>

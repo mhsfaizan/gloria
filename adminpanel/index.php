@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Gloria</title>
-	<base href="/angularjs/gloria/adminpanel/">
+	<base href="/gloria/adminpanel/">
 	<?php include("include/cdn.php");?>
 </head>
 <body ng-app="myApp">
