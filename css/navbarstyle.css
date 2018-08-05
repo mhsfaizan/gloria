@@ -15,6 +15,14 @@ header{
 .right-header>a:nth-child(3){
 	margin-top: 10px;
 }
+@media(min-width: 640px) and (max-width: 860px){
+	header > div{
+		width: 100%;
+	}
+}
+
+
+/*Navigation Style*/
 .lg-nav{
 	min-height: 60px;
 	display: flex;
@@ -88,12 +96,6 @@ ul.my-dropdown-menu li a{
 ul.my-dropdown-menu>li>a:hover{
 	background-color: #000;
 }
-@media(min-width:1000px){
-	.mydropdown:hover .my-dropdown-menu{
-		visibility: visible;
-		top: 100%;
-	}
-}
 .mydropdown-menu{
 	display: none;
 	padding-left: 2rem;
@@ -131,12 +133,17 @@ ul.my-dropdown-menu>li>a:hover{
 	background-color: #fff;
 }
 
-
 /*Mobile Nav*/
+@media(min-width:640px){
+	.mydropdown:hover .my-dropdown-menu{
+		visibility: visible;
+		top: 100%;
+	}
+}
 .sm-nav{
 	display: none;
 }
-@media(max-width: 1000px){
+@media(max-width: 640px){
 	header{
 		display: none;
 	}
@@ -152,7 +159,8 @@ ul.my-dropdown-menu>li>a:hover{
 		justify-content: space-between;
 		width: 95%;
 		margin: 0 auto;
-		padding-top: 12px;
+	    align-items: center;
+	    height: 60px;
 	}
 	.logo-and-col-btn{
 		display: flex;
@@ -162,7 +170,6 @@ ul.my-dropdown-menu>li>a:hover{
 	.collapse-btn{
 		display: inline-block;
 		width: 40px;
-		margin-top: 4px;
 		cursor: pointer;
 	}
 	.bar{
@@ -183,13 +190,6 @@ ul.my-dropdown-menu>li>a:hover{
 		margin: 0px 10px;
 		color: #fff;
 	}
-	.search-link .fa{
-		padding: 5px 15px;
-	}
-	.search-link .input-box input{
-	    height: 42px;
-	    right: 58px;
-	}
 }
 @media(min-width: 320px) and (max-width: 550px){
 	.sm-nav-container{
@@ -199,7 +199,7 @@ ul.my-dropdown-menu>li>a:hover{
 @media(min-width: 320px) and (max-width: 550px){
 	.search-link .input-box input {
 	    top: 33px;
-	    left: -150px;
+	    left: -190px;
 	    width: 300px;
 	}
 }
@@ -222,9 +222,10 @@ ul.my-dropdown-menu>li>a:hover{
 	    text-align: right;
 	    width: 100%;
 	    margin-top: 5px;
+	    margin-right: 20px;
 	}
 	.search-link .input-box input {
-	    left: -125px;
+	    left: -130px;
     	width: 243px;
 	}
 }

@@ -6,7 +6,7 @@
 			self::$conn = self::connect();
 		} 
 		
-		public static function  runFetchQuery($sql){
+		public static function runFetchQuery($sql){
 			$arr = array();
 			if($res = self::$conn->query($sql)){
 				if($res->num_rows>0){

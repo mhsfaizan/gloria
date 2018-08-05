@@ -25,6 +25,7 @@ $(document).ready(function() {
 			$('.whole-page-layer').hide();
 		}
 	});
+
 	$(".sidebar-links a:nth-child(2)").click(()=>{
 		$(".mydropdown-menu").toggleClass("mydropdown-menu-show");
 	});
