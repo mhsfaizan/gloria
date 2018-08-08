@@ -15,6 +15,11 @@ header{
 .right-header>a:nth-child(3){
 	margin-top: 10px;
 }
+@media(min-width: 640px) and (max-width: 710px){
+	header{
+		width: 100%;                                                                                                                                                                                                                                                                                                
+	}
+}
 @media(min-width: 640px) and (max-width: 860px){
 	header > div{
 		width: 100%;
