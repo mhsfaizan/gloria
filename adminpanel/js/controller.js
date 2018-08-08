@@ -46,12 +46,12 @@ app.controller("productCtrl",($scope,adminService)=>{
 		{
 			id:1,
 			item:'Men',
-			subCategory:['Jeans','tshirt','etc']
+			subCategory:['Jeans','T-Shirt','Formal Shirt','Shoes']
 		},
 		{
 			id:2,
 			item:'Women',
-			subCategory:['jeans','t-shirt']
+			subCategory:['Jeans','T-Shirt','Formal Shirt','Shoes']
 		}
 	];
 	$scope.cat = $scope.categories[0];
