@@ -18,36 +18,40 @@
 				<div class="signup-header">
 					<h2 class="text-white">SIGNUP HERE</h2>
 				</div>
-				<form class="p-3" name="signupForm" ng-submit="onSubmit($event.target)">
-					<p ng-if="signupError!=undefined" class="error text-center" required>{{signupError}}</p>
-					<div class="form-group">
-						<input type="text" name="name" placeholder="Name" class="form-control" ng-model="name" >
-					</div>
-					<small class="error" ng-if="signupForm.name.$error.required&&signupForm.name.$dirty">Required Feild * </small>
-					<div class="form-group">
-						<input type="email" name="email" placeholder="Email" class="form-control" ng-model="email" required>
-					</div>
-					<small class="error" ng-if="signupForm.email.$error.required&&signupForm.email.$dirty">Required Feild * </small>
-					<small class="error" ng-if="signupForm.email.$error.email&&signupForm.email.$dirty">Enter Valid Email * </small>
-					<div class="form-group">
-						<input type="text" name="contactno" placeholder="Contact Number" class="form-control" ng-model="contactno" required ng-minlength="10" ng-maxlength="10">
-					</div>
-					<small class="error" ng-if="signupForm.contactno.$error.required&&signupForm.contactno.$dirty">Required Feild * </small>
-					<small class="error" ng-if="signupForm.contactno.$error.minlength&&signupForm.contactno.$dirty">Enter Valid Number * </small>
-					<small class="error" ng-if="signupForm.contactno.$error.maxlength&&signupForm.contactno.$dirty">Enter Valid Number* </small>
-					<div class="form-group">
-						<input type="password" name="password" placeholder="Password" class="form-control" ng-model="password" required ng-minlength="6" ng-maxlength="10">
-					</div>
-					<small class="error" ng-if="signupForm.password.$error.required&&signupForm.password.$dirty">Required Feild * </small>
-					<small class="error" ng-if="signupForm.password.$error.minlength&&signupForm.password.$dirty">Minlength should be 6* </small>
-					<small class="error" ng-if="signupForm.password.$error.maxlength&&signupForm.password.$dirty">Max length should be 10* </small>
-					<div class="form-group">
-						<input type="password" name="cpassword" placeholder="Confirm Password" class="form-control" ng-model="cpassword" ng-pattern="password" required>
-					</div>
-					<small ng-if="signupForm.cpassword.$invalid&&signupForm.cpassword.$dirty" class="error">Password must match</small>
+				<div class="p-3">
+					<form name="signupForm" ng-submit="onSubmit($event.target)">
+						<p ng-if="signupError!=undefined" class="error text-center" required>{{signupError}}</p>
+						<div class="form-group">
+							<input type="text" name="name" placeholder="Name" class="form-control" ng-model="name" >
+						</div>
+						<small class="error" ng-if="signupForm.name.$error.required&&signupForm.name.$dirty">Required Feild * </small>
+						<div class="form-group">
+							<input type="email" name="email" placeholder="Email" class="form-control" ng-model="email" required>
+						</div>
+						<small class="error" ng-if="signupForm.email.$error.required&&signupForm.email.$dirty">Required Feild * </small>
+						<small class="error" ng-if="signupForm.email.$error.email&&signupForm.email.$dirty">Enter Valid Email * </small>
+						<div class="form-group">
+							<input type="text" name="contactno" placeholder="Contact Number" class="form-control" ng-model="contactno" required ng-minlength="10" ng-maxlength="10">
+						</div>
+						<small class="error" ng-if="signupForm.contactno.$error.required&&signupForm.contactno.$dirty">Required Feild * </small>
+						<small class="error" ng-if="signupForm.contactno.$error.minlength&&signupForm.contactno.$dirty">Enter Valid Number * </small>
+						<small class="error" ng-if="signupForm.contactno.$error.maxlength&&signupForm.contactno.$dirty">Enter Valid Number* </small>
+						<div class="form-group">
+							<input type="password" name="password" placeholder="Password" class="form-control" ng-model="password" required ng-minlength="6" ng-maxlength="10">
+						</div>
+						<small class="error" ng-if="signupForm.password.$error.required&&signupForm.password.$dirty">Required Feild * </small>
+						<small class="error" ng-if="signupForm.password.$error.minlength&&signupForm.password.$dirty">Minlength should be 6* </small>
+						<small class="error" ng-if="signupForm.password.$error.maxlength&&signupForm.password.$dirty">Max length should be 10* </small>
+						<div class="form-group">
+							<input type="password" name="cpassword" placeholder="Confirm Password" class="form-control" ng-model="cpassword" ng-pattern="password" required>
+						</div>
+						<small ng-if="signupForm.cpassword.$invalid&&signupForm.cpassword.$dirty" class="error">Password must match</small>
+						<div class="space"></div>
+						<button class="btn btn-primary w-100" ng-disabled="!signupForm.$valid"  ng-class="{'disable':!signupForm.$valid}">Sign Up</button>
+					</form>
 					<div class="space"></div>
-					<button class="btn btn-primary w-100" ng-disabled="!signupForm.$valid"  ng-class="{'disable':!signupForm.$valid}">Sign Up</button>
-				</form>
+					<a href="login.html" class="btn btn-transp w-100">Already have Account?Log In</a>
+				</div>
 			</div>
 		</div>
 	</section>

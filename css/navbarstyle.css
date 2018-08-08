@@ -212,7 +212,7 @@ ul.my-dropdown-menu>li>a:hover{
 }
 @media(max-width: 320px){
 	.sm-nav{
-		height: 95px;
+		height: 105px;
 	}
 	.sm-nav-container{
 	    flex-wrap: wrap;

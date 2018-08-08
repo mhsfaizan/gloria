@@ -4,13 +4,13 @@
 		<p class="dark-blue-font">lorem ipsum lorem ipsum  lorem ipsum lorem ipsum lorem ipsum</p>
 	</div>
 	<div class="right-header">
-		<a href="login.html" ng-if="user==undefined">Login/Register</a>
+		<a href="login.html" ng-if="user==undefined"><span class="fa fa-user"> Login/Signup</a>
 		<a ng-if="user!=undefined" href="#" class="dropdown-toggle" data-toggle="dropdown">{{user.name}}</a>
 		<div class="dropdown-menu">
 		    <a class="dropdown-item" href="dashboard.html">Dashboard</a>
 		    <a class="dropdown-item" href="#" ng-click="logout()">Logout</a>
 		</div>
-		<a href="customer-care.html">Customer Care</a>
+		<a href="customer-care.html"><span class="fa fa-address-card"></span> Customer Care</a>
 		<!-- <a href="wishlist.html"><span class="fa fa-heart-o"></span></a> -->
 		<a href="cart.html" class="cart-link">
 			<span class="fa fa-shopping-cart"></span>
@@ -106,7 +106,13 @@
 <div class="sidebar">
 	<div class="sidebar-head dark-blue-bg">
 		<div class="sidebar-links">
-			<a href="login.html"><span class="fa fa-user"></span> Login/Signup</a>
+			<a href="login.html" ng-if="user==undefined"><span class="fa fa-user"> Login/Signup</a>
+			<a ng-if="user!=undefined" href="#" class="dropdown-toggle" data-toggle="dropdown">{{user.name}}</a>
+			<div class="dropdown-menu">
+			    <a class="dropdown-item" href="dashboard.html">Dashboard</a>
+			    <a class="dropdown-item" href="#" ng-click="logout()">Logout</a>
+			</div>
+			<!-- <a href="login.html"><span class="fa fa-user"></span> Login/Signup</a> -->
 		</div>
 		<div class="close-btn-div">
 			<div class="close-btn"></div>
