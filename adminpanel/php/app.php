@@ -66,7 +66,7 @@
         $price = $post['price'];
         $productId = $post['proId'];
         $discount = $post['discount'];
-        $sql = "INSERT INTO size(sizename,color,images,price,discount,product_id) VALUES('$size','$color','$images','$price','$discount',$productId)";
+        $sql = "INSERT INTO size(sizename,color,images,mprice,mrp,product_id) VALUES('$size','$color','$images','$price','$discount',$productId)";
         echo json_encode(self::executeQuery($sql));
       }
       else{

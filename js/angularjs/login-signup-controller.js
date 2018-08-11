@@ -1,11 +1,15 @@
-app.run((saveLocal,$rootScope)=>{
+app.run((saveLocal,$rootScope,saveDataService)=>{
 	$rootScope.user = saveLocal.getUser();
+	$rootScope.cartLength = saveDataService.getCarts().length;
 	$rootScope.setUser = ()=>{
 		$rootScope.user = saveLocal.getUser();
 	}
 	$rootScope.logout = ()=>{
 		saveLocal.logOut();
 		window.location.href = "index.html";
+	}
+	$rootScope.setLength = ()=>{
+		$rootScope.cartLength = saveDataService.getCarts().length;
 	}
 });
 app.controller("loginController",($scope,loginSignup,saveLocal,$rootScope)=>{
