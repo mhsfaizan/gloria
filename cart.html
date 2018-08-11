@@ -19,7 +19,7 @@
 			</div>
 	    </div>
 	</div>
-	<section id="wishlist-sec">
+	<section id="wishlist-sec" ng-controller="cartController">
 		<div class="space"></div>
 		<div class="space"></div>
 		<div class="container">
@@ -36,70 +36,25 @@
 				      	</tr>
 				    </thead>
 				    <tbody>
-				      	<tr>
-					        <td>
-					        	<img src="img/prod-1.jpg" class="img-fluid prod-img">
+				      	<tr ng-repeat = "cart in carts track by $index">
+					        <td> 
+					        	<img ng-src="productsimg/{{cart.size.images|toArrFirst}}" class="img-fluid prod-img">
 					        </td>
 					        <td>
-					        	<h6>Product Name</h6>
-					        	<p>Size: </p>
-					        	<p>Product ID: </p>
+					        	<h6>{{cart.product.product_name}}</h6>
+					        	<p>Size:{{cart.size.sizename}} </p>
 					        </td>
 					        <td>
-					        	<p><b>&#8377; 299</b></p>
+					        	<p><b>&#8377; {{cart.size.mprice}}</b></p>
 					        </td>
 					        <td>
-					        	<input type="text" name="quantity" id="quantity" value="01">
+					        	<input type="number" name="quantity" id="quantity" value="1"  ng-model="quantity"  min="1" ng-change="updateTotal(cart,quantity*cart.size.mprice)">
 					        </td>
 					        <td>
-					        	<p><b>&#8377; 299</b></p>	
+					        	<p><b>&#8377; {{cart.size.mprice*quantity}}</b></p>	
 					        </td>
 					        <td>
-					        	<a href="#"><span class="fa fa-times"></span></a>	
-					        </td>
-				      	</tr>
-				      	<tr>
-					        <td>
-					        	<img src="img/prod-1.jpg" class="img-fluid prod-img">
-					        </td>
-					        <td>
-					        	<h6>Product Name</h6>
-					        	<p>Size: </p>
-					        	<p>Product ID: </p>
-					        </td>
-					        <td>
-					        	<p><b>&#8377; 299</b></p>
-					        </td>
-					        <td>
-					        	<input type="text" name="quantity" id="quantity" value="01">
-					        </td>
-					        <td>
-					        	<p><b>&#8377; 299</b></p>	
-					        </td>
-					        <td>
-					        	<a href="#"><span class="fa fa-times"></span></a>	
-					        </td>
-				      	</tr>
-				      	<tr>
-					        <td>
-					        	<img src="img/prod-1.jpg" class="img-fluid prod-img">
-					        </td>
-					        <td>
-					        	<h6>Product Name</h6>
-					        	<p>Size: </p>
-					        	<p>Product ID: </p>
-					        </td>
-					        <td>
-					        	<p><b>&#8377; 299</b></p>
-					        </td>
-					        <td>
-					        	<input type="text" name="quantity" id="quantity" value="01">
-					        </td>
-					        <td>
-					        	<p><b>&#8377; 299</b></p>	
-					        </td>
-					        <td>
-					        	<a href="#"><span class="fa fa-times"></span></a>	
+					        	<a href="#" ng-click="removeFromCart($index,cart)"><span class="fa fa-times"></span></a>	
 					        </td>
 				      	</tr>
 				    </tbody>
@@ -109,7 +64,7 @@
 			<div class="space"></div>
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-12 col-12">
-					<div class="promo-div p-3 border border-dark">
+					<!-- <div class="promo-div p-3 border border-dark">
 						<h4 class="dark-blue-font mb-3">APPY PROMO CODE</h4>
 						<form id="promo-from">
 							<div class="form-group">
@@ -119,23 +74,23 @@
 								<button class="btn btn-success">APPLY PROMO CODE</button>
 							</div>
 						</form>
-					</div>
+					</div> -->
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-12">
 					<div class="promo-div p-3 border border-info">
 						<table class="table">
 							<tbody>
-								<tr>
+								<!-- <tr>
 									<td>BAGGED TOTAL</td>
 									<td>&#8377; 299</td>
 								</tr>
 								<tr>
 									<td>DISCOUNT</td>
 									<td><p class="text-danger">&#8377; -99</p></td>
-								</tr>
+								</tr> -->
 								<tr>
 									<td>TOTAL</td>
-									<td><p class="text-success">&#8377; -200</p></td>
+									<td><p class="text-success">&#8377; {{total}}</p></td>
 								</tr>
 							</tbody>
 						</table>

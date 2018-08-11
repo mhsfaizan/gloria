@@ -48,8 +48,8 @@
 							      <tr>
 							        <th>SIZE</th>
 							        <th>COLOR</th>
-							        <th>PRICE</th>
-							        <th>DISCOUNT</th>
+							        <th>SELLING PRICE</th>
+							        <th>MRP</th>
 							      </tr>
 							    </thead>
 							    <tbody>
@@ -70,8 +70,8 @@
 								        	<input type="file" name="image" class="form-control" ng-model="images" required  valid-file color-img>
 							        	</span><br>
 							        </td>
-							        <td><input type="number" name="price" placeholder="Enter Price" class="form-control" ng-model="price" required></td>
-							        <td><input type="number" name="discount" placeholder="Discount" class="form-control" ng-model="discount" required></td>
+							        <td><input type="number" name="price" placeholder="Enter Selling Price" class="form-control" ng-model="price" required></td>
+							        <td><input type="number" name="discount" placeholder="Enter Discount" class="form-control" ng-model="discount" required></td>
 							      </tr>
 							      <tr>
 							      	<!-- <td colspan="4"><button type="button" href="#" class="add-more-size btn btn-primary" ng-disabled="!sizeForm.$valid">Save and Add More Sizes</button></td> -->

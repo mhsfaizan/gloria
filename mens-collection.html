@@ -156,18 +156,18 @@
 						<div class="card-body p-0 pb-2 m-0">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="jean in jeansColl|limitTo:3">
+									<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="jean in jeansColl|limitTo:3" >
 										<div class="product-container">
-											<a class="product-div" href="product.html">
+											<a class="product-div" href="product.html?product=jeans" ng-click="setProduct(jean)">
 												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
+													<img ng-src="productsimg/{{jean.sizes[0].images|toArrFirst}}" class="img-fluid">
 												</div>
 												<div class="product-details">
 													<h6 class="dark-blue-font">{{jean.product.product_name}}</h6>
 													<div class="pricing">
-														<span>&#8377; {{jean.sizes[0].price|getDiscount:jean.sizes[0].discount}}</span> &nbsp;
-														<span><del>  {{jean.sizes[0].price}}</del></span>
-														<span class="bg-info p-2 text-white">{{jean.sizes[0].discount}}% OFF</span>
+														<span>&#8377; {{jean.sizes[0].mprice}}</span> &nbsp;
+														<span><del>  {{jean.sizes[0].mrp}}</del></span>
+														<span class="bg-info p-2 text-white">{{jean.sizes[0].mprice|getDiscount:jean.sizes[0].mrp}}% OFF</span>
 													</div>
 													<div class="space"></div>
 													<h6>Sizes:&nbsp;<span ng-repeat="size in jean.sizes">{{size.sizename}}&nbsp;&nbsp;</span></h6>
@@ -193,16 +193,16 @@
 								<div class="row">
 									<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="formalShirt in formalShirts">
 										<div class="product-container">
-											<a class="product-div" href="product.html">
+											<a class="product-div" href="product.html?product=formal-shirt" ng-click="setProduct(formalShirt)">
 												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
+													<img ng-src="productsimg/{{formalShirt.sizes[0].images|toArrFirst}}" class="img-fluid">
 												</div>
 												<div class="product-details">
 													<h6 class="dark-blue-font">{{formalShirt.product.product_name}}</h6>
 													<div class="pricing">
-														<span>&#8377; {{formalShirt.sizes[0].price|getDiscount:formalShirt.sizes[0].discount}}</span> &nbsp;
-														<span><del> {{formalShirt.sizes[0].price}}</del></span>
-														<span class="bg-info p-2 text-white">{{formalShirt.sizes[0].discount}} % OFF</span>
+														<span>&#8377; {{formalShirt.sizes[0].mprice}}</span> &nbsp;
+														<span><del> {{formalShirt.sizes[0].mrp}}</del></span>
+														<span class="bg-info p-2 text-white">{{formalShirt.sizes[0].mprice|getDiscount:formalShirt.sizes[0].mrp}} % OFF</span>
 													</div>
 													<div class="space"></div>
 													<h6>Sizes:&nbsp;<span ng-repeat="size in formalShirt.sizes">{{size.sizename}}&nbsp;&nbsp;</span></h6>
@@ -227,19 +227,118 @@
 								<div class="row">
 									<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="shoe in shoes">
 										<div class="product-container">
-											<a class="product-div" href="product.html">
+											<a class="product-div" href="product.html?product=shoes">
 												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
+													<img ng-src="productsimg/{{shoe.sizes[0].images|toArrFirst}}" class="img-fluid">
 												</div>
 												<div class="product-details">
 													<h6 class="dark-blue-font">{{shoe.product.product_name}}</h6>
 													<div class="pricing">
-														<span>&#8377; {{shoe.sizes[0].price|getDiscount:shoe.sizes[0].discount}}</span> &nbsp;
-														<span><del> {{shoe.sizes[0].price}}</del></span>
-														<span class="bg-info p-2 text-white">{{shoe.sizes[0].discount}}% OFF</span>
+														<span>&#8377; {{shoe.sizes[0].mprice}}</span> &nbsp;
+														<span><del> {{shoe.sizes[0].mrp}}</del></span>
+														<span class="bg-info p-2 text-white">{{shoe.sizes[0].mprice|getDiscount:shoe.sizes[0].mrp}}% OFF</span>
 													</div>
 													<div class="space"></div>
 													<h6>Sizes:&nbsp;<span ng-repeat="size in shoe.sizes">{{size.sizename}}&nbsp;&nbsp;</h6>
+												</div>
+												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
+												<a href="#" class="btn btn-success">Buy Now</a>
+												<a href="#" class="btn btn-light">Add to Cart</a>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> 
+					</div>
+					
+					<div class="space"></div>
+
+					<div class="card">
+						<div class="card-header text-left">Trousers</div>
+						<div class="card-body p-0 pb-2 m-0">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="trouser in trousers">
+										<div class="product-container">
+											<a class="product-div" href="product.html?product=trousers">
+												<div class="product-img">
+													<img ng-src="productsimg/{{trouser.sizes[0].images|toArrFirst}}" class="img-fluid">
+												</div>
+												<div class="product-details">
+													<h6 class="dark-blue-font">{{trouser.product.product_name}}</h6>
+													<div class="pricing">
+														<span>&#8377; {{trouser.sizes[0].mprice}}</span> &nbsp;
+														<span><del> {{trouser.sizes[0].mrp}}</del></span>
+														<span class="bg-info p-2 text-white">{{trouser.sizes[0].mprice|getDiscount:trouser.sizes[0].mrp}}% OFF</span>
+													</div>
+													<div class="space"></div>
+													<h6>Sizes:&nbsp;<span ng-repeat="size in trouser.sizes">{{size.sizename}}&nbsp;&nbsp;</h6>
+												</div>
+												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
+												<a href="#" class="btn btn-success">Buy Now</a>
+												<a href="#" class="btn btn-light">Add to Cart</a>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> 
+					</div>
+					<div class="card">
+						<div class="card-header text-left">T-SHIRT</div>
+						<div class="card-body p-0 pb-2 m-0">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="tshirt in tshirts">
+										<div class="product-container">
+											<a class="product-div" href="product.html?product=t-shirt">
+												<div class="product-img">
+													<img ng-src="productsimg/{{tshirt.sizes[0].images|toArrFirst}}" class="img-fluid">
+												</div>
+												<div class="product-details">
+													<h6 class="dark-blue-font">{{tshirt.product.product_name}}</h6>
+													<div class="pricing">
+														<span>&#8377; {{tshirt.sizes[0].mprice}}</span> &nbsp;
+														<span><del> {{tshirt.sizes[0].mrp}}</del></span>
+														<span class="bg-info p-2 text-white">{{tshirt.sizes[0].mprice|getDiscount:tshirt.sizes[0].mrp}}% OFF</span>
+													</div>
+													<div class="space"></div>
+													<h6>Sizes:&nbsp;<span ng-repeat="size in tshirt.sizes">{{size.sizename}}&nbsp;&nbsp;</h6>
+												</div>
+												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
+												<a href="#" class="btn btn-success">Buy Now</a>
+												<a href="#" class="btn btn-light">Add to Cart</a>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> 
+					</div>
+					
+					<div class="space"></div>
+
+					<div class="card">
+						<div class="card-header text-left">POLO</div>
+						<div class="card-body p-0 pb-2 m-0">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="polo in polos">
+										<div class="product-container">
+											<a class="product-div" href="product.html?product=polo">
+												<div class="product-img">
+													<img ng-src="productsimg/{{polo.sizes[0].images|toArrFirst}}" class="img-fluid">
+												</div>
+												<div class="product-details">
+													<h6 class="dark-blue-font">{{polo.product.product_name}}</h6>
+													<div class="pricing">
+														<span>&#8377; {{polo.sizes[0].mprice}}</span> &nbsp;
+														<span><del> {{polo.sizes[0].mrp}}</del></span>
+														<span class="bg-info p-2 text-white">{{polo.sizes[0].mprice|getDiscount:polo.sizes[0].mrp}}% OFF</span>
+													</div>
+													<div class="space"></div>
+													<h6>Sizes:&nbsp;<span ng-repeat="size in polo.sizes">{{size.sizename}}&nbsp;&nbsp;</h6>
 												</div>
 												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
 												<a href="#" class="btn btn-success">Buy Now</a>

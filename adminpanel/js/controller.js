@@ -46,12 +46,12 @@ app.controller("productCtrl",($scope,adminService)=>{
 		{
 			id:1,
 			item:'Men',
-			subCategory:['Jeans','T-Shirt','Formal Shirt','Shoes']
+			subCategory:['Jeans','T-Shirt','Formal Shirt','Shoes','Trousers','Polo']
 		},
 		{
 			id:2,
 			item:'Women',
-			subCategory:['Jeans','T-Shirt','Formal Shirt','Shoes']
+			subCategory:['Tops','Kurtis','Yoga Pants','Flip Flop']
 		}
 	];
 	$scope.cat = $scope.categories[0];
@@ -84,7 +84,9 @@ app.controller("productCtrl",($scope,adminService)=>{
 		attr.price = $scope.price;
 		attr.proId = $scope.proId;
 		attr.discount = $scope.discount;
+		console.log(attr);
 		adminService.submitSize(attr,$scope.imagesArr,(data)=>{
+			console.log(data);
 			if(data.status==1){
 				alert(data.data+"Please Add More Sizes Of your Products");
 				form.reset();

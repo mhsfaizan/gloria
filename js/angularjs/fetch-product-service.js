@@ -64,4 +64,57 @@ app.service("procssDataService",function(fetchProductService){
 	this.getShoes = (menColl)=>{
 		return this.search(menColl,"Shoes");
 	}
+	this.getTrousers = (menColl)=>{
+		return this.search(menColl,"Trousers");
+	}
+	this.getPolo = (menColl)=>{
+		return this.search(menColl,"Polo");
+	}
+	this.getTshirt = (menColl)=>{
+		return this.search(menColl,"T-Shirt");
+	}
+});
+
+app.service("saveDataService",function(){
+	this.setProduct = (product)=>{
+		console.log(product);
+		
+		localStorage.setItem("product",JSON.stringify(product));
+		console.log(JSON.parse(localStorage.getItem("product")));
+	}
+	this.getProduct = ()=>{
+		return JSON.parse(localStorage.getItem("product"));
+	}
+	this.saveCart = (cartArr,isConcat)=>{
+		console.log(isConcat);
+		// if(localStorage.getItem("carts")!=null){
+		// 	var oldCart = JSON.parse(localStorage.getItem("carts"));
+		// 	var newCart = oldCart.concat(oldCart);
+		// 	localStorage.setItem("carts",JSON.stringify(newCart));
+		// }
+		// else{
+		// 	localStorage.setItem("carts",JSON.stringify(cartArr));
+		// }
+		if(isConcat==0){
+			localStorage.setItem("carts",JSON.stringify(cartArr));
+		}
+		else if(isConcat==1){
+			if(localStorage.getItem("carts")!=null){
+				var oldCart = JSON.parse(localStorage.getItem("carts"));
+				var newCart = oldCart.concat(cartArr);
+				localStorage.setItem("carts",JSON.stringify(newCart));
+			}
+			else{
+				localStorage.setItem("carts",JSON.stringify(cartArr));
+			}	
+		}
+	}
+	this.getCarts = ()=>{
+		if(localStorage.getItem("carts")!=null){
+			return JSON.parse(localStorage.getItem("carts"));
+		}
+		else{
+			return [];
+		}
+	}
 })

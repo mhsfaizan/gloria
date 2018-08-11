@@ -12,7 +12,7 @@
 			</div>
 	    </div>
 	</div>
-	<section class="products-sec" class="section-padding">
+	<section class="products-sec" class="section-padding" ng-controller="formalController" product-dir>
 		<div class="space"></div>
 		<div class="container">
 			<div class="row">
@@ -20,34 +20,17 @@
 					<div class="categoty">
 					</div>
 					<div class="total-prod">
-						<h5 class="dark-blue-font">Available Items: <span class="bg-secondary pt-1 pb-1 pl-2 pr-2 text-white">4555</span></h5>
+						<h5 class="dark-blue-font">Available Items: <span class="bg-secondary pt-1 pb-1 pl-2 pr-2 text-white">{{formalShirts.length}}</span></h5>
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-12">
-					<div class="pull-right">
-						<ul class="pagination">
-						    <li class="page-item disabled">
-						      <a class="page-link" href="#" tabindex="-1">Previous</a>
-						    </li>
-						    <li class="page-item"><a class="page-link" href="#">1</a></li>
-						    <li class="page-item active">
-						      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-						    </li>
-						    <li class="page-item"><a class="page-link" href="#">3</a></li>
-						    <li class="page-item">
-						      <a class="page-link" href="#">Next</a>
-						    </li>
-						  </ul>
-					</div>
-				</div>
+				
 			</div>
 			<div class="space"></div>
 			<h6> <strong>SORT BY:</strong> </h6>
 			<div class="sort-btns">
-				<a href="#" class="active-sort-btn">Newest Arrival</a>
-				<a href="#">Price- Low to High</a>
-				<a href="#">Most Popular</a>
-				<a href="#">Price- High to Low</a>
+				<a href="#" class="active-sort-btn" ng-click="sortBy(0)">Newest Arrival</a>
+				<a href="#" ng-click="sortBy(1)">Price- Low to High</a>
+				<a href="#" ng-click="sortBy(2)">Price- High to Low</a>
 			</div>
 			<hr>
 			<div class="space"></div>
@@ -55,71 +38,24 @@
 				<!-- Filters Part -->
 				<div class="col-lg-3 col-md-4 col-sm-6 col-12">
 					<div class="filter-div">
-						<h6><strong>REFINE YOUR SELECTION</strong></h6>
-						<ul class="selected-category bg-info">
-							<li>
-								<div class="selection">
-									<a href="#"><span class="fa fa-times"></span></a>
-									<span>Gender: Men</span>
-								</div>
-							</li>
-							<li>
-								<div class="selection">
-									<a href="#"><span class="fa fa-times"></span></a>
-									<span>Category: Topwear</span>
-								</div>
-							</li>
-							<li>
-								<a href="#" class="text-danger">Clear All</a>
-							</li>
-						</ul>
+						
 
-						<hr>
 						<div class="card">
 						    <div class="card-header">
 							    <b>PRICE</b>
-							    <!-- <p class="pull-right"><span class="fa fa-minus symbol"></span></p> -->
 						    </div>
 					      	<div class="card-body bg-info text-white p-2">
-					        	<h6>Price Range</h6>
+					        	<div class="form-group">
+					        		<input type="text" placeholder="Min" class="form-control" min="500" value="₹500">
+					        	</div>
+					        	<input type="text" placeholder="Max" class="form-control">
 					      	</div>
 					  	</div>
-
-						<hr>
-						<div class="card">
-						    <div class="card-header">
-							    <b>GENDER</b>
-							    <!-- <p class="pull-right"><span class="fa fa-minus symbol"></span></p> -->
-						    </div>
-					      	<div class="card-body bg-info text-white p-0">
-					        	<ul>
-					        		<li><input type="checkbox" name="men" value="men"> Men</li>
-					        		<li><input type="checkbox" name="women" value="women"> Women</li>
-					        		<li><input type="checkbox" name="women" value="women"> Kids</li>
-					        	</ul>
-					      	</div>
-					  	</div>
-
-					  	<hr>
-						<div class="card">
-						    <div class="card-header">
-							    <b>CATEGORY</b>
-							    <!-- <p class="pull-right"><span class="fa fa-minus symbol"></span></p> -->
-						    </div>
-					      	<div class="card-body bg-info text-white p-0">
-					        	<ul>
-					        		<li><input type="checkbox" name="topwear" value="topwear"> Topwear</li>
-					        		<li><input type="checkbox" name="bottomwear" value="bottomwear"> Bottomwear</li>
-					        		<li><input type="checkbox" name="accesories" value="accesories"> Accessories</li>
-					        	</ul>
-					      	</div>
-					  	</div>
-
-					  	<hr>
-						<div class="card">
+					  	<br>
+						<!-- <div class="card">
 						    <div class="card-header">
 							    <b>SIZE</b>
-							    <!-- <p class="pull-right"><span class="fa fa-minus symbol"></span></p> -->
+							    
 						    </div>
 					      	<div class="card-body bg-info text-white p-1">
 					        	<ul class="size-list">
@@ -131,11 +67,11 @@
 					      	</div>
 					  	</div>
 
-					  	<hr>
-						<div class="card">
+					  	<hr> -->
+						<!-- <div class="card">
 						    <div class="card-header">
 							    <b>COLOR</b>
-							    <!-- <p class="pull-right"><span class="fa fa-minus symbol"></span></p> -->
+							   
 						    </div>
 					      	<div class="card-body bg-info text-white p-1">
 					        	<ul class="color-list">
@@ -145,7 +81,7 @@
 					        		<li><a href="#"></a></li>
 					        	</ul>
 					      	</div>
-					  	</div>
+					  	</div> -->
 					</div>
 				</div>
 
@@ -153,77 +89,35 @@
 				<div class="col-lg-9 col-md-8 col-sm-6 col-12 text-center">
 					<div class="container-fluid">
 						<div class="row">
-							<div class="col-lg-4 col-md-6 col-sm-12 col-12">
+							<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="formalShirt in formalShirts|limitTo:productLimit|orderBy:onPrice">
 								<div class="product-container">
-									<a class="product-div" href="product.html">
+									<a class="product-div" href="product.html?product=mens-formal-shirt" ng-click="setProduct(formalShirt)">
 										<div class="product-img">
-											<img src="img/prod-1.jpg" class="img-fluid">
+											<img ng-src="productsimg/{{formalShirt.sizes[0].images|toArrFirst}}" class="img-fluid">
 										</div>
 										<div class="product-details">
-											<h6 class="dark-blue-font">Product Name</h6>
+											<h6 class="dark-blue-font">{{formalShirt.product.product_name}}</h6>
 											<div class="pricing">
-												<span>&#8377; 299</span> &nbsp;
-												<span><del> 2999</del></span>
-												<span class="bg-info p-2 text-white">10% OFF</span>
+												<span>&#8377; {{formalShirt.sizes[0].mprice}}</span> &nbsp;
+												<span><del> {{formalShirt.sizes[0].mrp}}</del></span>
+												<span class="bg-info p-2 text-white">{{formalShirt.sizes[0].mprice|getDiscount:formalShirt.sizes[0].mrp}}% OFF</span>
 											</div>
 											<div class="space"></div>
-											<h6>Size: SM, M, X, XL</h6>
+											<h6 >Size: <span ng-repeat="size in formalShirt.sizes">{{size.sizename}}&nbsp;&nbsp;</span></h6>
 										</div>
 										<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-										<a href="#" class="btn btn-success">Buy Now</a>
-										<a href="#" class="btn btn-light">Add to Cart</a>
-									</a>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-								<div class="product-container">
-									<a class="product-div" href="product.html">
-										<div class="product-img">
-											<img src="img/prod-1.jpg" class="img-fluid">
-										</div>
-										<div class="product-details">
-											<h6 class="dark-blue-font">Product Name</h6>
-											<div class="pricing">
-												<span>&#8377; 299</span> &nbsp;
-												<span><del> 2999</del></span>
-												<span class="bg-info p-2 text-white">10% OFF</span>
-											</div>
-											<div class="space"></div>
-											<h6>Size: SM, M, X, XL</h6>
-										</div>
-										<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-										<a href="#" class="btn btn-success">Buy Now</a>
-										<a href="#" class="btn btn-light">Add to Cart</a>
-									</a>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-								<div class="product-container">
-									<a class="product-div" href="product.html">
-										<div class="product-img">
-											<img src="img/prod-1.jpg" class="img-fluid">
-										</div>
-										<div class="product-details">
-											<h6 class="dark-blue-font">Product Name</h6>
-											<div class="pricing">
-												<span>&#8377; 299</span> &nbsp;
-												<span><del> 2999</del></span>
-												<span class="bg-info p-2 text-white">10% OFF</span>
-											</div>
-											<div class="space"></div>
-											<h6>Size: SM, M, X, XL</h6>
-										</div>
-										<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-										<a href="#" class="btn btn-success">Buy Now</a>
-										<a href="#" class="btn btn-light">Add to Cart</a>
 									</a>
 								</div>
 							</div>
 						</div>
+						<button ng-click="increase()" class="btn btn-primary mt-2 mb-2 w-100">Load More</button>
 					</div>
 				</div>
 			</div>
 		</div>
+		<section class="loader-container" ng-show="isSort">
+			<img src="img/loader.gif">
+		</section>
 	</section>
 	<div class="clear"></div>
 	<script src="js/product.js"></script>
