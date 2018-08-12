@@ -102,3 +102,46 @@ app.controller("polosController",($scope,procssDataService,fetchProductService)=
 	var productColl = fetchProductService.getLocalData();
 	$scope.polos = procssDataService.search(productColl,"Polo");
 })
+
+
+/*womenm controller*/
+
+app.controller("womenController",($scope,fetchProductService,procssDataService)=>{
+	var productColl = fetchProductService.getLocalData();
+	$scope.womenColl = procssDataService.search(productColl,"Women")
+	// console.log($scope.womenColl);
+	$scope.tops = procssDataService.search($scope.womenColl,"Tops");
+	// console.log($scope.tops);
+
+	$scope.kurtis = procssDataService.search($scope.womenColl,"Kurtis");
+	// console.log($scope.kurtis);
+
+	$scope.yogapants = procssDataService.search($scope.womenColl,"Yoga Pants");
+	// console.log($scope.yogapants);
+
+	$scope.flipflops = procssDataService.search($scope.womenColl,"Flip Flop");
+	// console.log($scope.flipflops);
+})
+
+app.controller("topsController",($scope,fetchProductService,procssDataService)=>{
+	var productColl = fetchProductService.getLocalData();
+	$scope.womenColl = procssDataService.search(productColl,"Women");
+	$scope.tops = procssDataService.search($scope.womenColl,"Tops");
+})
+app.controller("kurtisController",($scope,fetchProductService,procssDataService)=>{
+	var productColl = fetchProductService.getLocalData();
+	$scope.womenColl = procssDataService.search(productColl,"Women");
+	$scope.kurtis = procssDataService.search($scope.womenColl,"Kurtis");	
+})
+
+app.controller("yogaController",($scope,fetchProductService,procssDataService)=>{
+	var productColl = fetchProductService.getLocalData();
+	$scope.womenColl = procssDataService.search(productColl,"Women");
+	$scope.yogapants = procssDataService.search($scope.womenColl,"Yoga Pants");
+})
+
+app.controller("flipflopController",($scope,fetchProductService,procssDataService)=>{
+	var productColl = fetchProductService.getLocalData();
+	$scope.womenColl = procssDataService.search(productColl,"Women");
+	$scope.flipflops = procssDataService.search($scope.womenColl,"Flip Flop");
+})

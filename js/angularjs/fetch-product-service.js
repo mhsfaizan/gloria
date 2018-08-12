@@ -23,7 +23,7 @@ app.service("procssDataService",function(fetchProductService){
 			sizes:[]
 		}
 		var Collection  = [];
-		if(param=="Men"){
+		if(param=="Men"||param=="Women"){
 			for(let prod of products){
 				if(prod.product.category==param){
 					obj.product = prod.product;

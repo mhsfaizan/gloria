@@ -1,18 +1,18 @@
 	<?php include('inc/links.html'); ?>
 	<link rel="stylesheet" type="text/css" href="css/productstyle.css">
-	<title>Mens Women Tops - Gloria</title>
+	<title>Mens Women yoga pants - Gloria</title>
 </head>
 <body>
 	<?php include('inc/navbar.html'); ?>
 	<div class="card light-grey-bg text-dark">
 	    <div class="card-body">
 			<div class="container">
-				<h5 class="pull-left"><b>WOMEN Tops</b></h5>
-				<p class="pull-right"><b><a href="./">Home</a> > <a href="mens-collection.html">Men</a> > TOPS</b></p>
+				<h5 class="pull-left"><b>WOMEN YOGA PANTS</b></h5>
+				<p class="pull-right"><b><a href="./">Home</a> > <a href="mens-collection.html">Men</a> > YOGA</b></p>
 			</div>
 	    </div>
 	</div>
-	<section class="products-sec" class="section-padding" ng-controller="topsController" product-dir>
+	<section class="products-sec" class="section-padding" ng-controller="flipflopController" product-dir>
 		<div class="space"></div>
 		<div class="container">
 			<div class="row">
@@ -20,7 +20,7 @@
 					<div class="categoty">
 					</div>
 					<div class="total-prod">
-						<h5 class="dark-blue-font">Available Items: <span class="bg-secondary pt-1 pb-1 pl-2 pr-2 text-white">{{tops.length}}</span></h5>
+						<h5 class="dark-blue-font">Available Items: <span class="bg-secondary pt-1 pb-1 pl-2 pr-2 text-white">{{flipflops.length}}</span></h5>
 					</div>
 				</div>
 				
@@ -89,21 +89,21 @@
 				<div class="col-lg-9 col-md-8 col-sm-6 col-12 text-center">
 					<div class="container-fluid">
 						<div class="row">
-							<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="top in tops|limitTo:productLimit|orderBy:onPrice">
+							<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="flipflop in flipflops|limitTo:productLimit|orderBy:onPrice">
 								<div class="product-container">
-									<a class="product-div" href="product.html?product=woman-tops" ng-click="setProduct(top)">
+									<a class="product-div" href="product.html?product=woman-flip-flop" ng-click="setProduct(flipflop)">
 										<div class="product-img">
-											<img ng-src="productsimg/{{top.sizes[0].images|toArrFirst}}" class="img-fluid">
+											<img ng-src="productsimg/{{flipflop.sizes[0].images|toArrFirst}}" class="img-fluid">
 										</div>
 										<div class="product-details">
-											<h6 class="dark-blue-font">{{top.product.product_name}}</h6>
+											<h6 class="dark-blue-font">{{flipflop.product.product_name}}</h6>
 											<div class="pricing">
-												<span>&#8377; {{top.sizes[0].mprice}}</span> &nbsp;
-												<span><del> {{top.sizes[0].mrp}}</del></span>
-												<span class="bg-info p-2 text-white">{{top.sizes[0].mprice|getDiscount:top.sizes[0].mrp}}% OFF</span>
+												<span>&#8377; {{flipflop.sizes[0].mprice}}</span> &nbsp;
+												<span><del> {{flipflop.sizes[0].mrp}}</del></span>
+												<span class="bg-info p-2 text-white">{{flipflop.sizes[0].mprice|getDiscount:flipflop.sizes[0].mrp}}% OFF</span>
 											</div>
 											<div class="space"></div>
-											<h6 >Size: <span ng-repeat="size in top.sizes">{{size.sizename}}&nbsp;&nbsp;</span></h6>
+											<h6 >Size: <span ng-repeat="size in flipflop.sizes">{{size.sizename}}&nbsp;&nbsp;</span></h6>
 										</div>
 										<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
 									</a>

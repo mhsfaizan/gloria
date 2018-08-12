@@ -1,21 +1,21 @@
 	<?php include('inc/links.html'); ?>
 	<link rel="stylesheet" type="text/css" href="css/productstyle.css">
-	<title>Womens Collection- Gloria</title>
+	<title>Mens Collection- Gloria</title>
 </head>
 <body>
 	<?php include('inc/navbar.html'); ?>
-	<section class="products-sec" class="section-padding">
+	<section class="products-sec" class="section-padding" ng-controller="womenController">
 		<div class="card light-grey-bg text-dark">
 		    <div class="card-body">
 				<div class="container">
 					<h5 class="pull-left"><b>CATEGORY</b></h5>
-					<p class="pull-right"><b>Home > Category</b></p>
+					<p class="pull-right"><b><a href="./">Home</a> > WOMEN </b></p>
 				</div>
 		    </div>
 		</div>
 		<div class="space"></div>
 		<div class="container">
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-6 col-12">
 					<div class="categoty">
 					</div>
@@ -40,8 +40,8 @@
 						  </ul>
 					</div>
 				</div>
-			</div>
-			<div class="space"></div>
+			</div> -->
+			<!-- <div class="space"></div>
 			<h6> <strong>SORT BY:</strong> </h6>
 			<div class="sort-btns">
 				<a href="#" class="active-sort-btn">Newest Arrival</a>
@@ -49,11 +49,11 @@
 				<a href="#">Most Popular</a>
 				<a href="#">Price- High to Low</a>
 			</div>
-			<hr>
+			<hr> -->
 			<div class="space"></div>
 			<div class="row">
 				<!-- Filters Part -->
-				<div class="col-lg-3 col-md-4 col-sm-6 col-12">
+				<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-12">
 					<div class="filter-div">
 						<h6><strong>REFINE YOUR SELECTION</strong></h6>
 						<ul class="selected-category bg-info">
@@ -78,7 +78,7 @@
 						<div class="card">
 						    <div class="card-header">
 							    <b>PRICE</b>
-							    <!-- <p class="pull-right"><span class="fa fa-minus symbol"></span></p> -->
+							    
 						    </div>
 					      	<div class="card-body bg-info text-white p-2">
 					        	<h6>Price Range</h6>
@@ -89,7 +89,7 @@
 						<div class="card">
 						    <div class="card-header">
 							    <b>GENDER</b>
-							    <!-- <p class="pull-right"><span class="fa fa-minus symbol"></span></p> -->
+							    
 						    </div>
 					      	<div class="card-body bg-info text-white p-0">
 					        	<ul>
@@ -104,7 +104,7 @@
 						<div class="card">
 						    <div class="card-header">
 							    <b>CATEGORY</b>
-							    <!-- <p class="pull-right"><span class="fa fa-minus symbol"></span></p> -->
+							    
 						    </div>
 					      	<div class="card-body bg-info text-white p-0">
 					        	<ul>
@@ -119,7 +119,7 @@
 						<div class="card">
 						    <div class="card-header">
 							    <b>SIZE</b>
-							    <!-- <p class="pull-right"><span class="fa fa-minus symbol"></span></p> -->
+							    
 						    </div>
 					      	<div class="card-body bg-info text-white p-1">
 					        	<ul class="size-list">
@@ -135,7 +135,7 @@
 						<div class="card">
 						    <div class="card-header">
 							    <b>COLOR</b>
-							    <!-- <p class="pull-right"><span class="fa fa-minus symbol"></span></p> -->
+							    
 						    </div>
 					      	<div class="card-body bg-info text-white p-1">
 					        	<ul class="color-list">
@@ -147,74 +147,30 @@
 					      	</div>
 					  	</div>
 					</div>
-				</div>
+				</div> -->
 
 				<!-- Producst List -->
-				<div class="col-lg-9 col-md-8 col-sm-6 col-12 text-center">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-12 text-center">
 					<div class="card">
 						<div class="card-header text-left">TOPS</div>
 						<div class="card-body p-0 pb-2 m-0">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
+									<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="top in tops|limitTo:3" >
 										<div class="product-container">
-											<a class="product-div" href="product.html">
+											<a class="product-div" href="product.html?product=women-tops" ng-click="setProduct(top)">
 												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
+													<img ng-src="productsimg/{{top.sizes[0].images|toArrFirst}}" class="img-fluid">
 												</div>
 												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
+													<h6 class="dark-blue-font">{{top.product.product_name}}</h6>
 													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
+														<span>&#8377; {{top.sizes[0].mprice}}</span> &nbsp;
+														<span><del>  {{top.sizes[0].mrp}}</del></span>
+														<span class="bg-info p-2 text-white">{{top.sizes[0].mprice|getDiscount:top.sizes[0].mrp}}% OFF</span>
 													</div>
 													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
-												</div>
-												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-												<a href="#" class="btn btn-success">Buy Now</a>
-												<a href="#" class="btn btn-light">Add to Cart</a>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-										<div class="product-container">
-											<a class="product-div" href="product.html">
-												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
-												</div>
-												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
-													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
-													</div>
-													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
-												</div>
-												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-												<a href="#" class="btn btn-success">Buy Now</a>
-												<a href="#" class="btn btn-light">Add to Cart</a>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-										<div class="product-container">
-											<a class="product-div" href="product.html">
-												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
-												</div>
-												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
-													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
-													</div>
-													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
+													<h6>Sizes:&nbsp;<span ng-repeat="size in top.sizes">{{size.sizename}}&nbsp;&nbsp;</span></h6>
 												</div>
 												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
 												<a href="#" class="btn btn-success">Buy Now</a>
@@ -223,6 +179,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="pull-right"><a href="mens-jeans.html">LOAD MORE</a></div>
 							</div>
 						</div> 
 					</div>
@@ -234,65 +191,21 @@
 						<div class="card-body p-0 pb-2 m-0">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
+									<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="kurti in kurtis|limitTo:3">
 										<div class="product-container">
-											<a class="product-div" href="product.html">
+											<a class="product-div" href="product.html?product=formal-shirt" ng-click="setProduct(kurti)">
 												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
+													<img ng-src="productsimg/{{kurti.sizes[0].images|toArrFirst}}" class="img-fluid">
 												</div>
 												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
+													<h6 class="dark-blue-font">{{kurti.product.product_name}}</h6>
 													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
+														<span>&#8377; {{kurti.sizes[0].mprice}}</span> &nbsp;
+														<span><del> {{kurti.sizes[0].mrp}}</del></span>
+														<span class="bg-info p-2 text-white">{{kurti.sizes[0].mprice|getDiscount:kurti.sizes[0].mrp}} % OFF</span>
 													</div>
 													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
-												</div>
-												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-												<a href="#" class="btn btn-success">Buy Now</a>
-												<a href="#" class="btn btn-light">Add to Cart</a>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-										<div class="product-container">
-											<a class="product-div" href="product.html">
-												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
-												</div>
-												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
-													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
-													</div>
-													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
-												</div>
-												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-												<a href="#" class="btn btn-success">Buy Now</a>
-												<a href="#" class="btn btn-light">Add to Cart</a>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-										<div class="product-container">
-											<a class="product-div" href="product.html">
-												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
-												</div>
-												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
-													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
-													</div>
-													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
+													<h6>Sizes:&nbsp;<span ng-repeat="size in kurti.sizes">{{size.sizename}}&nbsp;&nbsp;</span></h6>
 												</div>
 												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
 												<a href="#" class="btn btn-success">Buy Now</a>
@@ -301,6 +214,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="pull-right"><a href="mens-formal-shirts.html">LOAD MORE</a></div>
 							</div>
 						</div> 
 					</div>
@@ -308,69 +222,25 @@
 					<div class="space"></div>
 
 					<div class="card">
-						<div class="card-header text-left">FORMAL SHIRTS</div>
+						<div class="card-header text-left">YOGA PANTS</div>
 						<div class="card-body p-0 pb-2 m-0">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
+									<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="yogapant in yogapants|limitTo:3">
 										<div class="product-container">
-											<a class="product-div" href="product.html">
+											<a class="product-div" href="product.html?product=yogapants">
 												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
+													<img ng-src="productsimg/{{yogapant.sizes[0].images|toArrFirst}}" class="img-fluid">
 												</div>
 												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
+													<h6 class="dark-blue-font">{{yogapant.product.product_name}}</h6>
 													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
+														<span>&#8377; {{yogapant.sizes[0].mprice}}</span> &nbsp;
+														<span><del> {{yogapant.sizes[0].mrp}}</del></span>
+														<span class="bg-info p-2 text-white">{{yogapant.sizes[0].mprice|getDiscount:yogapant.sizes[0].mrp}}% OFF</span>
 													</div>
 													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
-												</div>
-												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-												<a href="#" class="btn btn-success">Buy Now</a>
-												<a href="#" class="btn btn-light">Add to Cart</a>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-										<div class="product-container">
-											<a class="product-div" href="product.html">
-												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
-												</div>
-												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
-													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
-													</div>
-													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
-												</div>
-												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-												<a href="#" class="btn btn-success">Buy Now</a>
-												<a href="#" class="btn btn-light">Add to Cart</a>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-										<div class="product-container">
-											<a class="product-div" href="product.html">
-												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
-												</div>
-												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
-													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
-													</div>
-													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
+													<h6>Sizes:&nbsp;<span ng-repeat="size in yogapant.sizes">{{size.sizename}}&nbsp;&nbsp;</h6>
 												</div>
 												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
 												<a href="#" class="btn btn-success">Buy Now</a>
@@ -379,76 +249,33 @@
 										</div>
 									</div>
 								</div>
+								<div class="pull-right"><a href="mens-shoes.html">LOAD MORE</a></div>
 							</div>
 						</div> 
 					</div>
-
+					
 					<div class="space"></div>
 
 					<div class="card">
-						<div class="card-header text-left">JEANS</div>
+						<div class="card-header text-left">FLIP FLOP</div>
 						<div class="card-body p-0 pb-2 m-0">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
+									<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="flipflop in flipflops|limitTo:3">
 										<div class="product-container">
-											<a class="product-div" href="product.html">
+											<a class="product-div" href="product.html?product=flipflops">
 												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
+													<img ng-src="productsimg/{{flipflop.sizes[0].images|toArrFirst}}" class="img-fluid">
 												</div>
 												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
+													<h6 class="dark-blue-font">{{flipflop.product.product_name}}</h6>
 													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
+														<span>&#8377; {{flipflop.sizes[0].mprice}}</span> &nbsp;
+														<span><del> {{flipflop.sizes[0].mrp}}</del></span>
+														<span class="bg-info p-2 text-white">{{flipflop.sizes[0].mprice|getDiscount:flipflop.sizes[0].mrp}}% OFF</span>
 													</div>
 													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
-												</div>
-												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-												<a href="#" class="btn btn-success">Buy Now</a>
-												<a href="#" class="btn btn-light">Add to Cart</a>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-										<div class="product-container">
-											<a class="product-div" href="product.html">
-												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
-												</div>
-												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
-													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
-													</div>
-													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
-												</div>
-												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-												<a href="#" class="btn btn-success">Buy Now</a>
-												<a href="#" class="btn btn-light">Add to Cart</a>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-										<div class="product-container">
-											<a class="product-div" href="product.html">
-												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
-												</div>
-												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
-													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
-													</div>
-													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
+													<h6>Sizes:&nbsp;<span ng-repeat="size in flipflop.sizes">{{size.sizename}}&nbsp;&nbsp;</h6>
 												</div>
 												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
 												<a href="#" class="btn btn-success">Buy Now</a>
@@ -457,87 +284,13 @@
 										</div>
 									</div>
 								</div>
+								<div class="pull-right"><a href="mens-trousers.html">LOAD MORE</a></div>
 							</div>
 						</div> 
 					</div>
-
-					<div class="space"></div>
-
-					<div class="card">
-						<div class="card-header text-left">SHOES</div>
-						<div class="card-body p-0 pb-2 m-0">
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-										<div class="product-container">
-											<a class="product-div" href="product.html">
-												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
-												</div>
-												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
-													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
-													</div>
-													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
-												</div>
-												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-												<a href="#" class="btn btn-success">Buy Now</a>
-												<a href="#" class="btn btn-light">Add to Cart</a>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-										<div class="product-container">
-											<a class="product-div" href="product.html">
-												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
-												</div>
-												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
-													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
-													</div>
-													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
-												</div>
-												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-												<a href="#" class="btn btn-success">Buy Now</a>
-												<a href="#" class="btn btn-light">Add to Cart</a>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-6 col-sm-12 col-12">
-										<div class="product-container">
-											<a class="product-div" href="product.html">
-												<div class="product-img">
-													<img src="img/prod-1.jpg" class="img-fluid">
-												</div>
-												<div class="product-details">
-													<h6 class="dark-blue-font">Product Name</h6>
-													<div class="pricing">
-														<span>&#8377; 299</span> &nbsp;
-														<span><del> 2999</del></span>
-														<span class="bg-info p-2 text-white">10% OFF</span>
-													</div>
-													<div class="space"></div>
-													<h6>Size: SM, M, X, XL</h6>
-												</div>
-												<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
-												<a href="#" class="btn btn-success">Buy Now</a>
-												<a href="#" class="btn btn-light">Add to Cart</a>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div> 
-					</div>
+					
+					
+					
 				</div>
 			</div>
 		</div>
