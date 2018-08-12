@@ -1,4 +1,4 @@
-app.run((saveLocal,$rootScope,saveDataService)=>{
+app.run((saveLocal,$rootScope,saveDataService,fetchProductService,$timeout)=>{
 	$rootScope.user = saveLocal.getUser();
 	$rootScope.cartLength = saveDataService.getCarts().length;
 	$rootScope.setUser = ()=>{
@@ -10,6 +10,33 @@ app.run((saveLocal,$rootScope,saveDataService)=>{
 	}
 	$rootScope.setLength = ()=>{
 		$rootScope.cartLength = saveDataService.getCarts().length;
+	}
+	fetchProductService.fetchProduct((data)=>{
+		let allProducts;
+		if(data.status==1){
+			fetchProductService.saveLocal(data.data); 
+			allProducts = fetchProductService.getLocalData();
+		}
+	});
+	$rootScope.sortBy = (isAsc)=>{
+		$rootScope.isSort = true;
+		if(isAsc==1){
+			$rootScope.onPrice = 'sizes[0].mprice';
+		}
+		else if(isAsc==2){
+			$rootScope.onPrice = '-sizes[0].mprice';	
+		}
+		else{
+			$rootScope.onPrice = '';
+		}
+		$timeout(()=>{$rootScope.isSort = false},2000);
+	}
+	$rootScope.productLimit = 20;
+	$rootScope.increase = ()=>{
+		$rootScope.productLimit += 10;
+	}
+	$rootScope.setProduct = (product)=>{
+		saveDataService.setProduct(product);
 	}
 });
 app.controller("loginController",($scope,loginSignup,saveLocal,$rootScope)=>{

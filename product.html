@@ -29,7 +29,7 @@
 					</div>
 					<div class="thumbnails">
 						<div class="owl-carousel">
-							<div ng-repeat="image in product.sizes[0].images|toArr" class="mr-2"><a href="#" ><img ng-src="productsimg/{{image}}" class="img-fluid"></a></div>
+							<div ng-repeat="image in product.sizes[0].images|toArr track by $index" class="mr-2"><a href="#" ><img ng-src="productsimg/{{image}}" class="img-fluid"></a></div>
 						</div>
 					</div>
 					<div class="space"></div>

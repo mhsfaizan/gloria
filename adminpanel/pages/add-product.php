@@ -71,7 +71,7 @@
 							        	</span><br>
 							        </td>
 							        <td><input type="number" name="price" placeholder="Enter Selling Price" class="form-control" ng-model="price" required></td>
-							        <td><input type="number" name="discount" placeholder="Enter Discount" class="form-control" ng-model="discount" required></td>
+							        <td><input type="number" name="discount" placeholder="Enter MRP." class="form-control" ng-model="discount" required></td>
 							      </tr>
 							      <tr>
 							      	<!-- <td colspan="4"><button type="button" href="#" class="add-more-size btn btn-primary" ng-disabled="!sizeForm.$valid">Save and Add More Sizes</button></td> -->

@@ -18,6 +18,7 @@
 	<nav id="sidenav">
 		<ul class="sidenav-list">
 			<li class="sidenav-li"><a class="sidenav-link" href="./add-product">Add Product</a></li>
+			<li class="sidenav-li"><a class="sidenav-link" href="./add-sale">Add Sale</a></li>
 			<li class="sidenav-li"><a class="sidenav-link" href="./logout">Logout</a></li>
 		</ul>
 	</nav>

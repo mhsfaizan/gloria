@@ -7,12 +7,12 @@
 	<div class="card light-grey-bg text-dark">
 	    <div class="card-body">
 			<div class="container">
-				<h5 class="pull-left"><b>MEN SHOES</b></h5>
-				<p class="pull-right"><b><a href="./">Home</a> > <a href="mens-collection.html">Men</a> > SHOES</b></p>
+				<h5 class="pull-left"><b>MEN JEANS</b></h5>
+				<p class="pull-right"><b><a href="./">Home</a> > <a href="mens-collection.html">Men</a> > JEANS</b></p>
 			</div>
 	    </div>
 	</div>
-	<section class="products-sec" class="section-padding" ng-controller="shoesController" product-dir>
+	<section class="products-sec" class="section-padding" ng-controller="jeansController" product-dir>
 		<div class="space"></div>
 		<div class="container">
 			<div class="row">
@@ -20,7 +20,7 @@
 					<div class="categoty">
 					</div>
 					<div class="total-prod">
-						<h5 class="dark-blue-font">Available Items: <span class="bg-secondary pt-1 pb-1 pl-2 pr-2 text-white">{{shoes.length}}</span></h5>
+						<h5 class="dark-blue-font">Available Items: <span class="bg-secondary pt-1 pb-1 pl-2 pr-2 text-white">{{jeans.length}}</span></h5>
 					</div>
 				</div>
 				
@@ -89,21 +89,21 @@
 				<div class="col-lg-9 col-md-8 col-sm-6 col-12 text-center">
 					<div class="container-fluid">
 						<div class="row">
-							<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="shoe in shoes|limitTo:productLimit|orderBy:onPrice">
+							<div class="col-lg-4 col-md-6 col-sm-12 col-12" ng-repeat="jean in jeans|limitTo:productLimit|orderBy:onPrice">
 								<div class="product-container">
-									<a class="product-div" href="product.html?product=mens-shoes" ng-click="setProduct(shoe)">
+									<a class="product-div" href="product.html?product=mens-jeans" ng-click="setProduct(jean)">
 										<div class="product-img">
-											<img ng-src="productsimg/{{shoe.sizes[0].images|toArrFirst}}" class="img-fluid">
+											<img ng-src="productsimg/{{jean.sizes[0].images|toArrFirst}}" class="img-fluid">
 										</div>
 										<div class="product-details">
-											<h6 class="dark-blue-font">{{shoe.product.product_name}}</h6>
+											<h6 class="dark-blue-font">{{jean.product.product_name}}</h6>
 											<div class="pricing">
-												<span>&#8377; {{shoe.sizes[0].mprice}}</span> &nbsp;
-												<span><del> {{shoe.sizes[0].mrp}}</del></span>
-												<span class="bg-info p-2 text-white">{{shoe.sizes[0].mprice|getDiscount:shoe.sizes[0].mrp}}% OFF</span>
+												<span>&#8377; {{jean.sizes[0].mprice}}</span> &nbsp;
+												<span><del> {{jean.sizes[0].mrp}}</del></span>
+												<span class="bg-info p-2 text-white">{{jean.sizes[0].mprice|getDiscount:jean.sizes[0].mrp}}% OFF</span>
 											</div>
 											<div class="space"></div>
-											<h6 >Size: <span ng-repeat="size in shoe.sizes">{{size.sizename}}&nbsp;&nbsp;</span></h6>
+											<h6 >Size: <span ng-repeat="size in jean.sizes">{{size.sizename}}&nbsp;&nbsp;</span></h6>
 										</div>
 										<a href="#wish" class="wishlist-link"><span class="fa fa-heart-o"></span></a>
 									</a>

@@ -52,6 +52,21 @@ app.controller("productCtrl",($scope,adminService)=>{
 			id:2,
 			item:'Women',
 			subCategory:['Tops','Kurtis','Yoga Pants','Flip Flop']
+		},
+		{
+			id:3,
+			item:'Home Decore',
+			subCategory:['']
+		},
+		{
+			id:4,
+			item:'Watches',
+			subCategory:['Analog','Digital',]
+		},
+		{
+			id:5,
+			item:'Accessories',
+			subCategory:['Belts','Wallets','Hand Bags','Artificial Jwellery']
 		}
 	];
 	$scope.cat = $scope.categories[0];
@@ -89,6 +104,7 @@ app.controller("productCtrl",($scope,adminService)=>{
 			console.log(data);
 			if(data.status==1){
 				alert(data.data+"Please Add More Sizes Of your Products");
+				$scope.imagesArr = [];
 				form.reset();
 			}
 			else if(data.status==3){

@@ -16,6 +16,10 @@ app.config(($routeProvider,$locationProvider)=>{
 		resolve:myresolve(),
 		templateUrl:"pages/dashboard.php"
 	})
+	.when("/add-sale",{
+		resolve:myresolve(),
+		templateUrl:"pages/add-sale.php"
+	})
 	.when("/logout",{
 		resolve:{
 			deadresolve:(saveLocal,$location)=>{

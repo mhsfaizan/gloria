@@ -1,11 +1,5 @@
-app.controller("productsController",($scope,fetchProductService)=>{
-	fetchProductService.fetchProduct((data)=>{
-		let allProducts;
-		if(data.status==1){
-			fetchProductService.saveLocal(data.data); 
-			allProducts = fetchProductService.getLocalData();
-		}
-	});
+app.controller("productsController",($scope)=>{
+	
 })
 
 app.controller("mensController",($scope,procssDataService,saveDataService)=>{
@@ -22,7 +16,7 @@ app.controller("mensController",($scope,procssDataService,saveDataService)=>{
 	$scope.polos = procssDataService.getPolo($scope.menCollections);
 	// console.log($scope.polos);
 	$scope.tshirts = procssDataService.getTshirt($scope.menCollections);
-	// console.log($scope.tshirt);
+	// console.log($scope.tshirts);
 	$scope.setProduct = (product)=>{
 		saveDataService.setProduct(product);
 	}
@@ -81,25 +75,30 @@ app.controller("cartController",($scope,saveDataService,$rootScope)=>{
 app.controller("formalController",($scope,$rootScope,$timeout,fetchProductService,saveDataService,procssDataService)=>{
 	var productColl = fetchProductService.getLocalData();
 	$scope.formalShirts = procssDataService.search(productColl,"Formal Shirt");
-	// console.log($scope.formalShirts);
-	$scope.setProduct = (product)=>{
-		saveDataService.setProduct(product);
-	}
-	$scope.sortBy = (isAsc)=>{
-		$scope.isSort = true;
-		if(isAsc==1){
-			$scope.onPrice = 'sizes[0].mprice';
-		}
-		else if(isAsc==2){
-			$scope.onPrice = '-sizes[0].mprice';	
-		}
-		else{
-			$scope.onPrice = '';
-		}
-		$timeout(()=>{$scope.isSort = false},2000);
-	}
-	$rootScope.productLimit = 20;
-	$rootScope.increase = ()=>{
-		$rootScope.productLimit += 10;
-	}
+	
+})
+
+app.controller("jeansController",($scope,procssDataService,fetchProductService)=>{
+	var productColl = fetchProductService.getLocalData();
+	$scope.jeans = procssDataService.search(productColl,"Jeans");
+})
+
+app.controller("trousersController",($scope,procssDataService,fetchProductService)=>{
+	var productColl = fetchProductService.getLocalData();
+	$scope.trousers = procssDataService.search(productColl,"Trousers");
+})
+
+app.controller("shoesController",($scope,procssDataService,fetchProductService)=>{
+	var productColl = fetchProductService.getLocalData();
+	$scope.shoes = procssDataService.search(productColl,"Shoes");
+})
+
+app.controller("tshirtsController",($scope,procssDataService,fetchProductService)=>{
+	var productColl = fetchProductService.getLocalData();
+	$scope.tshirts = procssDataService.search(productColl,"T-Shirt");
+})
+
+app.controller("polosController",($scope,procssDataService,fetchProductService)=>{
+	var productColl = fetchProductService.getLocalData();
+	$scope.polos = procssDataService.search(productColl,"Polo");
 })

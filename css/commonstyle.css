@@ -152,3 +152,6 @@ p{
 .disable{
 	cursor: not-allowed;
 }
+.loader-container img{
+	width: 60px;
+}
